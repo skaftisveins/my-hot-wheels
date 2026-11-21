@@ -24,7 +24,13 @@ gegnum safnið og skoða bílana.
 - Leit í safninu (nafn, ár, litur, sería …), síur (uppáhalds, í pakkningu,
   lausir) og röðun (nýjast skráð, nafn, árgerð).
 - Smellt á bíl opnar hann í **sýningarham**: myndin flýgur úr bílskúrnum á
-  upplýst svið sem fær lit sinn úr lakki bílsins, með spegilmynd á glergólfi.
+  upplýst svið sem fær lit sinn úr lakki bílsins.
+  - Á stúdíómyndum (hvítur eða ljósgrár bakgrunnur) er bíllinn klipptur út og
+    stendur sjálfur á gljáandi gólfi með skugga og spegilmynd. Þetta er reiknað
+    í tækinu sjálfu, ókeypis. Teikningar, plakat og hvítir bílar á hvítu
+    haldast sem gljáandi kort.
+  - Ljósglampi rennur yfir lakkið. Á iPhone er hægt að ýta á 🔄-hnappinn og þá
+    fylgir glampinn halla símans og bíllinn hliðrast aðeins.
   - Strjúka til hliðar til að fletta (líka með mús eða örvatökkum). Kortið
     hallar í þrívídd og liturinn á sviðinu breytist með fingrinum.
   - Ýta á myndina til að fela allt nema bílinn, ýta aftur til að fá allt til baka.

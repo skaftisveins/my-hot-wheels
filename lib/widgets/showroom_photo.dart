@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:math' as math;
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
+
+import 'cutout.dart';
 
 /// Myndaþjónn Hot Wheels Wiki skilar myndum í þeirri breidd sem beðið er um
 /// (`.../scale-to-width-down/500`). Í sýningarham biðjum við um stærri mynd.
@@ -152,14 +154,19 @@ Color? dominantPaint(Uint8List rgba, int width, int height) {
   return Color.from(alpha: 1, red: sumR[best] / w, green: sumG[best] / w, blue: sumB[best] / w);
 }
 
-/// Myndin af bílnum sem „gljáandi safnkort“: ávöl horn í réttu hlutfalli,
-/// skörp mynd sem birtist ofan á minni myndinni, og spegilmynd á glergólfi.
+/// Bíllinn á sviðinu.
+///
+/// Ef hægt er að klippa bílinn út úr myndinni stendur hann sjálfur á gljáandi
+/// gólfi með skugga og spegilmynd. Annars er myndin sýnd sem gljáandi
+/// safnkort. Í báðum tilvikum rennur ljósglampi yfir eftir halla símans.
 class ShowroomPhoto extends StatefulWidget {
   const ShowroomPhoto({
     super.key,
     required this.url,
     this.reflection = true,
     this.kenBurns = false,
+    this.parallax,
+    this.sheen,
   });
 
   final String? url;
@@ -168,12 +175,19 @@ class ShowroomPhoto extends StatefulWidget {
   /// Hægur aðdráttur á myndina (notað í myndasýningu).
   final bool kenBurns;
 
+  /// Halli símans frá -1 (vinstri) til 1 (hægri): bíllinn hliðrast aðeins.
+  final ValueListenable<double>? parallax;
+
+  /// Staða ljósglampans frá -1 til 1 (utan bílsins handan við ±1).
+  final ValueListenable<double>? sheen;
+
   @override
   State<ShowroomPhoto> createState() => _ShowroomPhotoState();
 }
 
 class _ShowroomPhotoState extends State<ShowroomPhoto> {
   double? _aspect;
+  Cutout? _cutout;
 
   @override
   void initState() {
@@ -184,16 +198,26 @@ class _ShowroomPhotoState extends State<ShowroomPhoto> {
   @override
   void didUpdateWidget(ShowroomPhoto oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.url != widget.url) _resolve();
+    if (oldWidget.url != widget.url) {
+      _cutout = null;
+      _resolve();
+    }
   }
 
   Future<void> _resolve() async {
     final url = widget.url;
     if (url == null || url.isEmpty) return;
+    final source = hiResUrl(url)!;
+    _cutout = cachedCutout(source);
     _aspect = _aspectCache[url];
-    if (_aspect != null) return;
-    final aspect = await imageAspect(url);
-    if (mounted && url == widget.url) setState(() => _aspect = aspect);
+    if (_aspect == null) {
+      final aspect = await imageAspect(url);
+      if (mounted && url == widget.url) setState(() => _aspect = aspect);
+    }
+    if (_cutout == null) {
+      final cutout = await cutoutFor(source);
+      if (mounted && url == widget.url && cutout != null) setState(() => _cutout = cutout);
+    }
   }
 
   @override
@@ -210,94 +234,260 @@ class _ShowroomPhotoState extends State<ShowroomPhoto> {
             ),
           );
         }
+        final cutout = _cutout;
         final aspect = _aspect;
-        if (aspect == null) return const SizedBox.expand();
-
-        // Stærsta kort í réttu hlutfalli sem kemst fyrir, og pláss undir fyrir spegilmynd.
-        const reflectionShare = 0.28;
-        final availableHeight = widget.reflection
-            ? constraints.maxHeight / (1 + reflectionShare)
-            : constraints.maxHeight;
-        var width = constraints.maxWidth;
-        var height = width / aspect;
-        if (height > availableHeight) {
-          height = availableHeight;
-          width = height * aspect;
+        final Widget child;
+        if (cutout != null) {
+          child = _buildCutout(cutout, constraints);
+        } else if (aspect != null) {
+          child = _buildCard(url, aspect, constraints);
+        } else {
+          child = const SizedBox.expand();
         }
-        final radius = BorderRadius.circular(math.min(22, width * 0.05));
 
-        Widget photo = _Layers(url: url, kenBurns: widget.kenBurns);
-        photo = ClipRRect(borderRadius: radius, child: photo);
-
-        final card = SizedBox(
-          width: width,
-          height: height,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: radius,
-              boxShadow: const [
-                BoxShadow(color: Color(0x66000000), blurRadius: 40, offset: Offset(0, 24)),
-              ],
-            ),
-            child: photo,
-          ),
+        Widget stage = AnimatedSwitcher(
+          // Bíllinn „stígur út úr myndinni“ þegar útklippan er tilbúin.
+          duration: MediaQuery.disableAnimationsOf(context)
+              ? Duration.zero
+              : const Duration(milliseconds: 450),
+          switchInCurve: Curves.easeOutCubic,
+          layoutBuilder: (current, previous) =>
+              Stack(alignment: Alignment.center, children: [...previous, ?current]),
+          child: KeyedSubtree(key: ValueKey(cutout != null), child: child),
         );
 
-        if (!widget.reflection) return Center(child: card);
+        final parallax = widget.parallax;
+        if (parallax != null && !MediaQuery.disableAnimationsOf(context)) {
+          stage = ValueListenableBuilder<double>(
+            valueListenable: parallax,
+            child: stage,
+            builder: (_, t, child) => Transform.translate(offset: Offset(t * 10, 0), child: child),
+          );
+        }
+        if (widget.kenBurns && !MediaQuery.disableAnimationsOf(context)) {
+          stage = TweenAnimationBuilder<double>(
+            tween: Tween(begin: 1, end: 1.06),
+            duration: const Duration(seconds: 5),
+            curve: Curves.easeInOutSine,
+            builder: (_, scale, child) => Transform.scale(scale: scale, child: child),
+            child: stage,
+          );
+        }
+        return stage;
+      },
+    );
+  }
 
-        final reflectionHeight = height * reflectionShare;
-        return Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              card,
-              const SizedBox(height: 6),
-              SizedBox(
-                width: width,
-                height: reflectionHeight,
-                child: ClipRect(
-                  child: OverflowBox(
-                    alignment: Alignment.topCenter,
-                    maxHeight: height,
-                    minHeight: height,
-                    child: ShaderMask(
-                      blendMode: BlendMode.dstIn,
-                      shaderCallback: (rect) => LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [0, reflectionShare * 0.9],
-                        colors: [Colors.white.withValues(alpha: 0.22), Colors.transparent],
-                      ).createShader(rect),
-                      child: Transform.flip(
-                        flipY: true,
-                        child: ClipRRect(
-                          borderRadius: radius,
-                          child: _Layers(url: url),
-                        ),
-                      ),
+  Widget _buildCutout(Cutout cutout, BoxConstraints constraints) {
+    const reflectionShare = 0.32;
+    final availableHeight = widget.reflection
+        ? constraints.maxHeight / (1 + reflectionShare)
+        : constraints.maxHeight;
+    var width = constraints.maxWidth * 0.96;
+    var height = width / cutout.aspect;
+    if (height > availableHeight) {
+      height = availableHeight;
+      width = height * cutout.aspect;
+    }
+    Widget car() => RawImage(
+      image: cutout.image,
+      width: width,
+      height: height,
+      fit: BoxFit.contain,
+      filterQuality: FilterQuality.medium,
+    );
+
+    final body = SizedBox(
+      width: width,
+      height: height,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          // Skuggi undir dekkjunum: hringlaga halli teygður í sporöskju.
+          Positioned(
+            left: width * 0.04,
+            right: width * 0.04,
+            bottom: -height * 0.06,
+            height: height * 0.14,
+            child: Transform.scale(
+              scaleY: 0.22,
+              child: OverflowBox(
+                maxHeight: width * 0.92,
+                minHeight: width * 0.92,
+                child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: RadialGradient(
+                      colors: [Color(0xB3000000), Color(0x59000000), Color(0x00000000)],
+                      stops: [0, 0.45, 1],
                     ),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
-        );
-      },
+          Positioned.fill(
+            child: _Sheen(position: widget.sheen, child: car()),
+          ),
+        ],
+      ),
+    );
+    if (!widget.reflection) return Center(child: body);
+
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          body,
+          SizedBox(
+            width: width,
+            height: height * reflectionShare,
+            child: ClipRect(
+              child: OverflowBox(
+                alignment: Alignment.topCenter,
+                maxHeight: height,
+                minHeight: height,
+                child: ShaderMask(
+                  blendMode: BlendMode.dstIn,
+                  shaderCallback: (rect) => LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: const [0, reflectionShare * 0.95],
+                    colors: [Colors.white.withValues(alpha: 0.32), Colors.transparent],
+                  ).createShader(rect),
+                  child: Transform.flip(flipY: true, child: car()),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCard(String url, double aspect, BoxConstraints constraints) {
+    const reflectionShare = 0.28;
+    final availableHeight = widget.reflection
+        ? constraints.maxHeight / (1 + reflectionShare)
+        : constraints.maxHeight;
+    var width = constraints.maxWidth;
+    var height = width / aspect;
+    if (height > availableHeight) {
+      height = availableHeight;
+      width = height * aspect;
+    }
+    final radius = BorderRadius.circular(math.min(22, width * 0.05));
+
+    final card = SizedBox(
+      width: width,
+      height: height,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: radius,
+          boxShadow: const [
+            BoxShadow(color: Color(0x66000000), blurRadius: 40, offset: Offset(0, 24)),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: radius,
+          child: _Sheen(
+            position: widget.sheen,
+            child: _Layers(url: url),
+          ),
+        ),
+      ),
+    );
+    if (!widget.reflection) return Center(child: card);
+
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          card,
+          const SizedBox(height: 6),
+          SizedBox(
+            width: width,
+            height: height * reflectionShare,
+            child: ClipRect(
+              child: OverflowBox(
+                alignment: Alignment.topCenter,
+                maxHeight: height,
+                minHeight: height,
+                child: ShaderMask(
+                  blendMode: BlendMode.dstIn,
+                  shaderCallback: (rect) => LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: const [0, reflectionShare * 0.9],
+                    colors: [Colors.white.withValues(alpha: 0.22), Colors.transparent],
+                  ).createShader(rect),
+                  child: Transform.flip(
+                    flipY: true,
+                    child: ClipRRect(
+                      borderRadius: radius,
+                      child: _Layers(url: url),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Ljósglampi sem rennur yfir lakkið (eða kortið) eftir halla.
+/// Glampinn lendir bara á bílnum sjálfum, ekki á gegnsæja svæðinu.
+class _Sheen extends StatelessWidget {
+  const _Sheen({required this.position, required this.child});
+
+  final ValueListenable<double>? position;
+  final Widget child;
+
+  static Widget _mask(double t, Widget child) {
+    final p = 0.5 + t.clamp(-1.4, 1.4) * 0.55;
+    double at(double v) => v.clamp(0.0, 1.0);
+    return ShaderMask(
+      blendMode: BlendMode.srcATop,
+      shaderCallback: (rect) => LinearGradient(
+        begin: const Alignment(-1, -0.8),
+        end: const Alignment(1, 0.8),
+        stops: [0, at(p - 0.16), at(p), at(p + 0.16), 1],
+        colors: const [
+          Color(0x00FFFFFF),
+          Color(0x00FFFFFF),
+          Color(0x4DFFFFFF),
+          Color(0x00FFFFFF),
+          Color(0x00FFFFFF),
+        ],
+      ).createShader(rect),
+      child: child,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final position = this.position;
+    if (position == null) return _mask(-0.35, child);
+    return ValueListenableBuilder<double>(
+      valueListenable: position,
+      child: child,
+      builder: (_, t, child) => _mask(t, child!),
     );
   }
 }
 
 /// Minni myndin strax (úr skyndiminni) og skarpa myndin sem birtist yfir henni.
 class _Layers extends StatelessWidget {
-  const _Layers({required this.url, this.kenBurns = false});
+  const _Layers({required this.url});
 
   final String url;
-  final bool kenBurns;
 
   @override
   Widget build(BuildContext context) {
     final hiRes = hiResUrl(url)!;
-    Widget image = Stack(
+    final image = Stack(
       fit: StackFit.expand,
       children: [
         CachedNetworkImage(imageUrl: url, fit: BoxFit.cover, fadeInDuration: Duration.zero),
@@ -311,15 +501,6 @@ class _Layers extends StatelessWidget {
           ),
       ],
     );
-    if (kenBurns && !MediaQuery.disableAnimationsOf(context)) {
-      image = TweenAnimationBuilder<double>(
-        tween: Tween(begin: 1, end: 1.06),
-        duration: const Duration(seconds: 5),
-        curve: Curves.easeInOutSine,
-        builder: (_, scale, child) => Transform.scale(scale: scale, child: child),
-        child: image,
-      );
-    }
     return image;
   }
 }

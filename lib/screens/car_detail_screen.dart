@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
@@ -7,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../app.dart';
 import '../models/car.dart';
+import '../services/device_tilt.dart';
 import '../widgets/showroom_photo.dart';
 import 'car_form_screen.dart';
 
@@ -39,8 +41,61 @@ class CarDetailScreen extends StatefulWidget {
   State<CarDetailScreen> createState() => _CarDetailScreenState();
 }
 
-class _CarDetailScreenState extends State<CarDetailScreen> {
+class _CarDetailScreenState extends State<CarDetailScreen> with SingleTickerProviderStateMixin {
   static const _slideDuration = Duration(milliseconds: 4800);
+
+  /// Halli símans (-1 til 1), mýktur. Hliðrar bílnum og stýrir glampanum.
+  final _parallax = ValueNotifier<double>(0);
+  bool _sensor = false;
+  void Function()? _stopSensor;
+
+  /// Án hallaskynjara rennur glampinn einu sinni yfir bílinn þegar hann birtist.
+  late final AnimationController _sweep = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1700),
+    value: 1,
+  );
+  late final Animation<double> _sweepPosition = _sweep.drive(
+    Tween<double>(begin: -1.4, end: 1.4).chain(CurveTween(curve: Curves.easeInOutCubic)),
+  );
+
+  ValueListenable<double> get _sheen => _sensor ? _parallax : _sweepPosition;
+
+  @override
+  void initState() {
+    super.initState();
+    if (DeviceTilt.available && !DeviceTilt.needsPermission) _listenToTilt();
+    Future.delayed(const Duration(milliseconds: 500), _sweepLight);
+  }
+
+  void _sweepLight() {
+    if (!mounted || _sensor || MediaQuery.disableAnimationsOf(context)) return;
+    _sweep.forward(from: 0);
+  }
+
+  void _listenToTilt() {
+    _stopSensor?.call();
+    _stopSensor = DeviceTilt.listen((degrees) {
+      if (!_sensor) setState(() => _sensor = true);
+      final target = (degrees / 28).clamp(-1.0, 1.0);
+      _parallax.value += (target - _parallax.value) * 0.25;
+    });
+  }
+
+  Future<void> _enableTilt() async {
+    // Á iPhone verður að biðja um leyfi beint úr smellinum.
+    final granted = await DeviceTilt.requestPermission();
+    if (!mounted) return;
+    if (granted) {
+      _listenToTilt();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Hallaðu símanum til að færa ljósið yfir bílinn')),
+      );
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Fékk ekki leyfi til að lesa halla símans')));
+    }
+  }
 
   late final PageController _pages = PageController(initialPage: widget.initialIndex);
   late int _index = widget.initialIndex;
@@ -51,6 +106,9 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
 
   @override
   void dispose() {
+    _stopSensor?.call();
+    _sweep.dispose();
+    _parallax.dispose();
     _slideshow?.cancel();
     _pages.dispose();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
@@ -242,16 +300,21 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                     controller: _pages,
                     itemCount: cars.length,
                     physics: const PageScrollPhysics(parent: BouncingScrollPhysics()),
-                    onPageChanged: (i) => setState(() {
-                      _direction = i >= _index ? 1 : -1;
-                      _index = i;
-                    }),
+                    onPageChanged: (i) {
+                      setState(() {
+                        _direction = i >= _index ? 1 : -1;
+                        _index = i;
+                      });
+                      _sweepLight();
+                    },
                     itemBuilder: (context, i) => _StagePage(
                       car: cars[i],
                       index: i,
                       controller: _pages,
                       chromeVisible: _chrome,
                       kenBurns: _playing && i == index,
+                      parallax: _sensor ? _parallax : null,
+                      sheen: _sheen,
                       onTap: () {
                         if (_playing) {
                           _stopSlideshow();
@@ -290,6 +353,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         duration: fade,
                         curve: Curves.easeOutCubic,
                         child: _TopBar(
+                          onEnableTilt: DeviceTilt.needsPermission && !_sensor ? _enableTilt : null,
                           counter: cars.length > 1 ? '${index + 1} af ${cars.length}' : null,
                           favorite: car.favorite,
                           playing: _playing,
@@ -390,6 +454,8 @@ class _StagePage extends StatelessWidget {
     required this.kenBurns,
     required this.onTap,
     required this.onDoubleTap,
+    required this.parallax,
+    required this.sheen,
   });
 
   final Car car;
@@ -399,6 +465,8 @@ class _StagePage extends StatelessWidget {
   final bool kenBurns;
   final VoidCallback onTap;
   final VoidCallback onDoubleTap;
+  final ValueListenable<double>? parallax;
+  final ValueListenable<double> sheen;
 
   @override
   Widget build(BuildContext context) {
@@ -409,7 +477,7 @@ class _StagePage extends StatelessWidget {
       tag: 'car-${car.id}',
       // Á fluginu milli skjáa sést bara kortið sjálft, án spegilmyndar.
       flightShuttleBuilder: (_, _, _, _, _) => ShowroomPhoto(url: car.imageUrl, reflection: false),
-      child: ShowroomPhoto(url: car.imageUrl, kenBurns: kenBurns),
+      child: ShowroomPhoto(url: car.imageUrl, kenBurns: kenBurns, parallax: parallax, sheen: sheen),
     );
 
     // Þegar flett er hallar kortið aðeins í þrívídd og minnkar.
@@ -551,6 +619,7 @@ class _TopBar extends StatelessWidget {
     required this.onPlay,
     required this.onEdit,
     required this.onDelete,
+    this.onEnableTilt,
   });
 
   final String? counter;
@@ -562,6 +631,9 @@ class _TopBar extends StatelessWidget {
   final VoidCallback onPlay;
   final VoidCallback onEdit;
   final VoidCallback onDelete;
+
+  /// Sýnt á iPhone þar sem biðja þarf um leyfi til að lesa halla símans.
+  final VoidCallback? onEnableTilt;
 
   @override
   Widget build(BuildContext context) {
@@ -592,6 +664,12 @@ class _TopBar extends StatelessWidget {
                         ),
                       ),
               ),
+              if (onEnableTilt != null)
+                IconButton(
+                  tooltip: 'Færa ljósið með því að halla símanum',
+                  onPressed: onEnableTilt,
+                  icon: const Icon(Icons.screen_rotation_alt_rounded),
+                ),
               if (canPlay)
                 IconButton(
                   tooltip: playing ? 'Stöðva sýningu' : 'Spila sýningu',
