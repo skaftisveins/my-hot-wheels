@@ -1,0 +1,1419 @@
+{{casting
+|name     = Rodger Dodger
+|series   = [[Hot Wheels Flying Colors|Flying Colors]]
+|years    = [[1974]] - [[1979]] (original)<br/>[[1998]] - [[2013]] (1st [[retool]])<br/>[[2015]] - Present (2nd [[retool]])
+|designer = [[Larry Wood]]
+|number   =8259 
+|image    = Rodgerdodger.jpg
+}}
+
+==Description==
+The '''Rodger Dodger''' is a modified '73 Dodge Charger SE with a blown V8 poking out of the hood, one of a number of variations on the [[Bye-Focal]] design. It has since become one of the most popular Hot Wheels cars ever made, alongside the Twin Mill and Bone Shaker. The early '74 version had a metal base and capped redlines in the rear only. It featured Plum Crazy enamel paint with flame tampos. The '''Rodger Dodger''' reused the same base from the 1973 model named "[[Show-Off]]". On some models, you can find the original "Show-Off" name partially bleeding through the deletion plate.
+
+There is also rare white interior variation of the plum 1974 Rodger Dodger, as well as a rare blue variation. With video games, you can drive it in Hot Wheels [[World Race]], [[Stunt Track Challenge]], [[Track Attack]], and [[Unleashed]].
+
+Mattel [[retool]]ed the Rodger Dodger in 1998. Released into the line-up, this first retool is almost identical to the original casting.
+
+In 2015 the car was retooled again. This time, the tool is different to the original casting. The engine, interior and side pipes are one plastic piece. The exhaust pipes now come out from under the front quarter panels.
+
+==Original Versions==
+The '''Rodger Dodger''' has come out in the following 1/64 scale versions:
+{| class="wikitable sortable" style="font-size: 85%; text-align: left;" width="100%"
+! style="border-style: none none solid solid" |'''Year'''
+! style="border-style: none none solid solid" |'''Series'''
+! style="border-style: none none solid solid" |'''Color'''
+! style="border-style: none none solid solid" |'''Tampo'''
+! style="border-style: none none solid solid" |'''Base Color<br>/<br>Type'''
+! style="border-style: none none solid solid" |'''Window Color'''
+! style="border-style: none none solid solid" |'''Interior Color'''
+! style="border-style: none none solid solid" |'''Wheel Type'''
+! style="border-style: none none solid solid" |'''Cast#'''
+! style="border-style: none none solid solid" |'''Country'''
+! style="border-style: none none solid solid" |'''Notes'''
+! style="border-style: none none solid solid" |'''Photo'''
+|-
+|[[List of 1974 Hot Wheels|1974]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Enamel Plum
+|Orange & Yellow flames  on top
+|Unpainted<br>/<br>Metal
+|Blue tint
+|Black 
+|[[RL]]
+|8259
+|Hong Kong 
+|''Playable in [[Track Attack]]''
+|[[File:Rodger_dodger_early_74_capped_rear.jpg|75px]]
+|-
+|[[List of 1974 Hot Wheels|1974]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Enamel Plum
+|Orange & Yellow flames  on top
+|Unpainted<br>/<br>Metal
+|Blue tint
+|White
+|[[RL]]
+|8259
+|Hong Kong 
+|''Playable in [[Track Attack]]''<br>''Rare''
+|[[File:35 Years of Speed Randy Leffingwell Rodger Dodger (2).JPG|75px]]
+|-
+|[[List of 1974 Hot Wheels|1974]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Enamel Blue
+|Orange & Yellow flames on top
+|Unpainted<br>/<br>Metal
+|Blue tint
+|Black or Brown
+|[[RL]]
+|8259
+|Hong Kong
+|''Super Rare''
+|[[File:Blue_rodger_dodger_thanks_seville.jpg|75px]]
+|-
+|[[List of 1975 Hot Wheels|1975]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Enamel Plum
+|Orange & Yellow flames on top
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|[[RL]]
+|8259
+|Hong Kong
+|
+|[[File:Rodger_plastic_base_Plum_75.jpg|75px]]
+|-
+|[[List of 1977 Hot Wheels|1977]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Gold Chrome
+|Purple, Red & White stripes
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|[[RL]]
+|8259
+|Hong Kong
+|
+|[[File:Rodger_Plastic_base_GOLD_RL_77.jpg|75px]]
+|-
+|[[List of 1977 Hot Wheels|1977]]
+|[[Hot Wheels Flying Colors|Flying Colors]]
+|Gold Chrome
+|Purple, Red & White stripes
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|[[BW]]
+|8259
+|Hong Kong
+|
+|[[File:Rodger_GOLD_plastic_BW_77.jpg|75px]]
+|-
+|[[List of 1978 Hot Wheels|1978]]
+|[[Drag Strippers]]
+|Gold Chrome
+|Purple, Red & White stripes
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|[[BW]]
+|8259
+|Hong Kong
+|
+|[[File:Rodger_GOLD_plastic_BW_77.jpg|75px]]
+|-
+|[[1979]]
+|[[List of 1979 Hot Wheels|Mainline]]
+|Gold Chrome
+|Purple, Red & White stripes
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|[[BW]]
+|8259
+|Hong Kong
+|
+|[[File:Rodger_GOLD_plastic_BW_77.jpg|75px]]
+|}
+
+==1998 1st [[Retool]] Versions ==
+The '''Rodger Dodger''' was released in these 1/64 scale versions:
+{| class="wikitable sortable" style="font-size: 85%; text-align: left;" width="100%"
+! style="border-style: none none solid solid" |'''Col #'''
+! style="border-style: none none solid solid" |'''Year'''
+! style="border-style: none none solid solid" |'''Series'''
+! style="border-style: none none solid solid" |'''Color'''
+! style="border-style: none none solid solid" |'''Tampo'''
+! style="border-style: none none solid solid" |'''Base Color<br>/<br>Type'''
+! style="border-style: none none solid solid" |'''Window Color'''
+! style="border-style: none none solid solid" |'''Interior Color'''
+! style="border-style: none none solid solid" |'''Wheel Type'''
+! style="border-style: none none solid solid" |'''Toy #'''
+! style="border-style: none none solid solid" |'''Country'''
+! style="border-style: none none solid solid" |'''Notes'''
+! style="border-style: none none solid solid" |'''Photo'''
+|-
+|
+|[[1998]]
+|[[Hot Wheels 30th Anniversary]]
+|Enamel Plum ( Purple 
+|Orange & Yellow flames  on top. "30th Anniversary" logo on Rear
+|Unpainted<br>/<br>Metal
+|Blue tint
+|Black or White
+|[[RL]]
+|18863
+|
+|
+|[[File:30th Rodger Dodger.JPG|75px]]
+|-
+|
+|[[1998]]
+|[[12th Annual Hot Wheels Collectors Convention]]<br>2/3
+|White 
+|"426" with black & orange stripes on sides and hood, black roof, 12th Annual Collectors Convention logo on trunk
+|Chrome<br>/<br>Plastic
+|Blue tint
+|Black
+|White line [[DDRR]]
+|22246
+|China
+|
+|[[File:Hot_Wheels_12th_Collectors_Convention_Rodger_Dodger.jpg|75px]]
+|-
+|
+|[[2000]]
+|[[Cop Rods Series (1999)#Series 2|Cop Rods (Series 2)]]
+|White 
+|Blue & Black Stripes, "Detroit Police" on the sides 
+|Chrome<br>/<br>Plastic 
+|Light blue tint
+|Black
+|[[DDRR]]
+|26607
+|Malaysia
+|''K-B Toys Exclusive''
+|[[File:2000_Rodger_Dodger_Cop_Rods.jpg|75px]]
+|-
+|04/240
+|[[2001]]
+|[[2001 Treasure Hunts Series|Treasure Hunts]]<br>4/12
+|Black
+|Orange & Yellow flames on top, TH logo on rear fender
+|Chrome<br>/<br>Plastic
+|Gold tint
+|Red
+|White Stripe [[CDDRR]]
+|50003
+|Malaysia
+|
+|[[File:Rodger_Dodger_-_01TH.jpg|75px]]
+|-
+|186/240
+|[[2001]]
+|[[List of 2001 Hot Wheels#2001 Hot Wheels|Mainline]]<br>90/144
+|Yellow
+|Black & Orange Flames on sides, Orange & Black HW Logo trunck
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[5SP]]
+|53725
+|Malaysia
+|
+|[[File:Rodger_Dodger_yellow_2001_mainline.JPG|75px]]
+|-
+|
+|[[2001]]
+|[[HotWheelsCollectors.com|HWC.com]]
+|Yellow
+|Red & dark orange stripes with black & white checkerboard pattern along top; HWC.com logo with red, orange, & yellow flames on sides
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[DDRR|WLCDDRR]]
+|56008
+|Malaysia
+|''5,040 produced''<br>''One of the first offerings by HWC.com, came with certificate of authenticity''
+|[[File:Rodger Dodger yellow HW dot com.JPG|75px]]
+|-
+|
+|[[2001]]
+|[[HotWheelsCollectors.com|HWC.com]]
+|Green
+|Red & dark orange stripes with black & white checkerboard pattern along top; HWC.com logo with red, orange, & yellow flames on sides
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[DDRR|WLCDDRR]]
+|56008
+|Malaysia
+|''1,500 produced''<br>''1,000 were included as a bonus with the 2002 factory sealed sets which also came with certificate of authenticity, the other 500 were given away at events''
+|[[File:Rodger Dodger green HW dot com.JPG|75px]]
+|-
+|
+|[[2002]]
+|[[JC Whitney|JC Whitney Promo]]
+|Blue
+|JC Whitney
+|Metal
+|Smoke tint
+|Black
+|[[RR|GYRR]]
+|85604
+|Malaysia
+|
+|[[File:JC Whitney Rodger Dodger Blue 85604.jpg|75px]]
+|-
+|
+|[[2002]]
+|[[JC Whitney|JC Whitney Promo]]
+|Red
+|JC Whitney
+|Metal
+|Smoke tint
+|Black
+|[[RR|GYRR]]
+|85604
+|Malaysia
+|
+|[[File:2002 Rodger Dodger.jpg|75px]]
+|-
+|061
+|[[List of 2002 Hot Wheels|2002]]
+|[[Spares 'N Strikes Series (2002)|Spares 'N Strikes]]<br>3/4
+|Metelflake Green
+|Lila's Bowl-A - Rama On roof & side. Black & gold strip 
+|Chrome<br>/<br>Plastic
+|Clear
+|Light Gold
+|[[5SP]]
+|54343
+|Malaysia 
+|Card Variations with either a red or blue Bowling Ball with broken Bowling Pin. 
+|[[File:Rodgerdodger.green.jpg|75px]]
+|-
+|
+|[[2003]]
+|[[3rd Annual Hot Wheels Collectors Nationals|3rd Annual Collectors Nationals]]<br>3/4
+|Blue
+|White, yellow, orange, red, & dark red flames along top & sides
+|Chrome<br>/<br>Plastic
+|Clear
+|White
+|[[DDRR|RLDDRR]]
+|B8532
+|Thailand
+|''10,000 produced''<br>''Also available through HWC.com''
+|[[File:Collectors Nationals 3rd 2003 Rodger Dodger Blue Thailand B8532.jpg|75px]]
+|-
+|
+|[[2003]]
+|[[Hall of Fame#Hall of Fame Tin Set|Hall of Fame 10 Tin Set]]<br>02/10
+|Blue
+|Yellow Flame Tampos
+|
+|
+|
+|[[5SP]]
+|C3638
+|China
+|''Top 10''
+|[[File:Rodger-dodger-flame-hunter.jpg|75px]]
+|-
+|
+|[[5-Packs#2003|2003]]
+|[[Raptor Blast 5-Pack]]
+|White
+|Green Raptor 2, darker green stripes & light green details
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|Green [[5SP]]
+|57024 
+|Thailand
+|
+|[[file:Rodger Dodger CIMG1283.JPG|75px]]
+|-
+|
+|[[5-Packs#2003|2003]]
+|[[Raptor Blast 5-Pack]]
+|White
+|Green Raptor 2 lighter version of green stripes & yellow details
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|Green [[5SP]]
+|
+|China
+|
+|[[File:Hot_Wheels_Rodger_Dodger_2003_Raptor_Blast.jpg|75px]]
+|-
+|
+|[[2004]]
+|[[Entertainment 2-Packs|WWE: Kane vs. Undertaker Entertainment 2-Pack]]
+|Red
+|Undertaker Logo On Sides And Roof
+|Chrome<br>/<br>Plastic
+|Clear
+|Grey
+|Blue [[5SP]]
+|G7831
+|Malaysia
+|''2004 WWE Undertaker vs Kane''
+|[[File:Hot_Wheels_Rodger_Dodger_2004_Wrestling_Two-Pack_Kane_vs._Undertaker.jpg|75px]]
+|-
+|
+|[[2004|2005]]
+|[[Hot Wheels 10-Pack Exclusive]]
+|Metalflake Light Blue
+|Light blue, yellow & black flames on sides, black roof, hw logo hood 
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[RL5SP]]
+|54486 
+|Malaysia
+|
+|[[File:RodgerDodger10pack1.jpg|75px]]
+|-
+|
+|[[2006|2005]]
+|[[Hot Wheels 10-Pack Exclusive]]
+|Black
+|Orange flaming on side
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[RL5SP]]
+|54486
+|Malaysia
+|
+|[[File:2005 Rodger Dodger B.jpg|75px]]
+|-
+|129/187
+|[[List of 2005 Hot Wheels|2005]]
+|[[2005 Treasure Hunts Series|Treasure Hunts]] 9/12
+|Metalflake Dark Red
+|Black Tampos, Yellow wavy flame
+|Chrome<br>/<br>Plastic
+|Smoke tint 
+|Black
+|[[DDRR]]
+|G6744
+|Malaysia
+|
+|[[File:Rodger_Dodger_-_05TH.jpg|75px]]
+|-
+|
+|[[2006]]
+|[[Easter Egg-Clusives Series (2006)|Easter Egg-Clusives]]
+|Metalflake Gold
+|Blue, Brown, White, & Black w/Rabbit on sides & roof
+|Gold Chrome / Plastic
+|Yellow tint
+|Chrome Gold
+|Gold [[5SP]]
+|J7087
+|Malaysia
+|
+|[[File:Hot_Wheels_Rodger_Dodger_2006_Easter_Egg-Clusives.jpg|75px]]
+|-
+|
+|[[2006]]
+|[[HotWheelsCollectors.com Series 5|HWC.com 5: Neo-Classics]]<br />2/6
+|[[Spectraflame]] Antifreeze
+|Two white stripes on top, one white stripe & gumball with '6' on sides, "HW CHRIS" on rear California license plate, painted taillights
+|Chrome<br>/<br>Metal
+|Light blue tint
+|Tan
+|[[NCRL]]
+|K3381
+|China
+|''11,000 produced''<br />''Playable in [[Track Attack]]''
+|[[File:2006hwcneoclassicsrodgerdodger.jpg|75px]]
+|-
+|
+|[[2006]]
+|[[Super Chromes Series (2006/2007)|Super Chromes]]
+|Chrome
+|Red & Blue stripes & flames on top and sides, "8" on sides
+|Chrome<br>/<br>Plastic
+|Light blue tint
+|Black
+|[[5SP|RL5SP]]
+|K4765
+|Malaysia
+|''Target Exclusive''
+|[[File:Target Super Chromes 2006 Rodger Dodger Chrome Malaysia K4765.jpg|75px]]
+|-
+|
+|[[2006]]
+|[[Super Chromes Series (2006/2007)|Super Chromes]]
+|Gold Chrome
+|Red & white stripes on top, red & white flames on sides
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|[[5SP|RL5SP]]
+|K4751
+|Malaysia
+|''Target Exclusive''
+|[[File:Target Super Chromes 2006 Rodger Dodger Gold Chrome Malaysia K4751.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[40 Years of Hot Wheels Set]]
+|Orange
+|Red & Yellow on Hood & Roof
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|White
+|RL [[BW]]
+|M0543
+|Thailand
+|
+|[[File:Rodger_Dodger_40_Years_of_Hot_Wheels_Set.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[40 Years of Hot Wheels Set]]
+|Orange
+|Red & Yellow on Hood & Roof
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|White
+|RL [[BW]]
+|M0543
+|Thailand
+|
+|[[File:Rodger_Dodger_40_Years_of_Hot_Wheels_Set.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Since '68 Series|Since '68: Top 40]]<br>26/40
+|Metalflake Orange
+|Red & Silver Flames on Sides
+|Unpainted<br>/<br>Metal
+|Clear
+|White
+|RL [[BW]]
+|M1556
+|Thailand
+|
+|[[File:Hot_Wheels_M1556_02.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Since '68 Series#Since '68: Collector Top 40 Set|Since '68: Collector Top 40 Set]]
+|Pearl Purple
+|Orange & Silver Flames on Sides
+|Unpainted<br>/<br>Metal
+|Clear
+|White
+|RL [[BW]]
+|N4608
+|Thailand
+|
+|[[File:Since '68 Rodger Dodger.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>28/30
+|[[Spectraflame]] Black
+|Yellow Flames Outlined in red & Blue
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|L0756
+|Thailand
+|
+|[[File:RodgerDodgerClassics07Black.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>28/30
+|[[Spectraflame]] Light Blue
+|White, Yellow & Red Flames on sides
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|L0756
+|Thailand
+|
+|[[File:2007 Rodger Dodger blue.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>28/30
+|[[Spectraflame]] Orange
+|White, Yellow & Red flames on sides
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|L0756
+|Thailand
+|
+|[[File:Orange_Rodger_Dodger.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>28/30 
+|[[Spectraflame]] Pink 
+|White Flames
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|L0756
+|Thailand
+|
+|[[File:Rodger_Dodger._HW_Classics._Spectraflame_pink._2.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>28/30
+|[[Spectraflame]] Antifreeze
+|White & Green Flames
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|L0756
+|Thailand
+|
+|[[File:Anitfreeze Classics Rodger Dodger.png|75px]]
+|-
+|
+|[[2007]]
+|[[Hot Wheels Classics#Hot Wheels Classics Series 3|Classics (Series 3)]]<br>Walgreens 3-Pack #4<br>#11/12
+|[[Spectraflame]] Magenta
+|White, Yellow & Red Flames on sides
+|Unpainted<br>/<br>Metal
+|Smoke tint
+|Black
+|[[5SP|BFG5SP]]
+|M1812
+|Thailand
+|
+|[[File:Pink_Rodger_Dodger_with_flames.jpg|75px]]
+|-
+|
+|[[2007]]
+|[[7th Annual Hot Wheels Collectors Nationals]]
+|[[Spectraflame]] Pink
+|White stripes on sides, hood, & trunk, "RODGER DODGER" and Neo Classic wheel on sides, "HLITFIN" on black rear California license plate, detailed headlights & taillights
+|Chrome<br>/<br>Metal
+|Clear
+|White
+|[[NCRL]]
+|L2117
+|China
+|''RLC Party Car''
+|[[file:7th_Annual_Hot_Wheels_Collectors_Nationals_Rodger_Dodger.jpg|75px]]
+|-
+|
+|[[2008]]
+|[[Father's Day Series (2008)|Father's Day]]<br>5/5
+|Metalflake Green
+|Yellow, Pink, Brown & White tampos on sides & roof with "Groovy Daddy" on sides
+|Chrome<br>/<br>Plastic
+|Clear
+|Black 
+|[[5SP]]
+|N3255
+|Malaysia
+|''K Mart Exclusive''<br>[[Base Codes|Base code(s)]]
+|[[File:Fathers_rodger_dodger.jpg|75px]]
+|-
+|
+|[[2009]]
+|[[Cop Rods Series (2009)|Cop Rods]]<br>20/26
+|Black & White
+|Black & white flames & "09" on sides, "Vero Beach FL" on sides, Vero Beach FL Police Department symbol on sides & hood, Hot Wheels logo on trunk
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|Red Line Black [[5SP]]
+|N9012
+|Thailand
+|Base code(s): B23
+|[[File:Cop Rods 2009 Rodger Dodger Black & White Thailand N9012.jpg|75px]]
+|-
+|
+|[[2009]]
+|[[Fire Rods Series (2009)|Fire Rods]]<br>2/26 
+|Satin Black
+|Red & Yellow tampos. "Racine Fire Dept" & Flames on sides "RFD" & Flames on roof
+|Chrome<br>/<br>Plastic
+|Clear
+|Red
+|[[RL]]
+|N9020
+|Thailand
+|''[[Toys R Us]] Exclusive''<br>Playable in [[Track Attack]]<br>Base code(s): A43
+|[[File:N9020_c_09_010.jpg|75px]]
+|-
+|
+|[[2009]]
+|[[Military Rods Series (2009)|Military Rods]]<br>11/26
+|Satin Olive
+|Gold White & Black "Sarge"
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|Red Line [[5SP]]
+|N9810
+|Thailand
+|Base code(s): B12
+|[[File:RodgerDodger_MilitaryRods.JPG|75px]]
+|-
+|
+|[[2010]]
+|[[2010 Red Line Club Rewards Series|RLC Rewards]]<br />3/4
+|[[Spectraflame]] Gold
+|Gold & brown stripes & RLC logo on sides; "RWRDS-1" on rear California license plate 
+|Chrome<br>/<br>Metal
+|Blue tint
+|Brown
+|[[NCRL]]
+|R8409
+|Thailand
+|''2,544 produced''<br>Base code(s): D07
+|[[File:RodgerDodger_10Rewards.JPG|75px]]
+|-
+|
+|[[2011]]
+|[[Easter Eggsclusives Series (2011)|Easter Eggsclusives]]
+|Hot Pink
+|Purple, lavender, white & pink flaming eggs on sides & roof & trunk, "Easter 2011"
+|Chrome<br>/<br>Plastic 
+|Smoke tint
+|Black
+|White-rimmed [[OH5]]
+|V3687
+|Thailand
+|''[[Wal-Mart Exclusives]]''<br>Base code(s
+
+|[[File:RodgerDodger_Wal_11Easter.JPG|75px]]
+|-
+|
+|[[2011]]
+|Japan Convention Exclusive
+|White
+|Hot Wheels logo on trunk
+|Chrome<br>/<br>Plastic
+|Clear
+|Black
+|[[MC5 (muscle)|MC5]]
+|X3005
+|Malaysia
+|''Came with markers, may have been available in Toys 'R' Us in other regions''<br>Base code(s): D24
+|[[File:RodgerDodgerJapanConvention.jpg|75px]]
+|-
+|
+|[[2012]] 
+|[[Fourth of July Series (2012)|Fourth of July]]
+|Red, White, Blue
+|Blue & white stripes with white stars on roof/trunk & flaming blue stripes with white stars on sides, "Fourth of July"
+|Chrome<br>/<br>Plastic
+|Smoke tint
+|Black
+|Gold [[5SP]] 
+|X5955
+|Malaysia
+|''Wal-Mart Exclusive''<br>Base code(s) 
+|[[File:20124thofJulyRodgerDodger.jpg|75px]]
+|-
+|
+|[[2013]]
+|[[Holiday Hot Rods Series (2013)|Holiday Hot Rods]]
+|Red
+|White, Gold, & yellow stripes on sides & across top, '2013' & 'Happy Holidays' on sides
+|Gold Chrome<br>/<br>Plastic 
+|Clear
+|Black
+|Gold [[5SP]]
+|Y2094
+|Malaysia
+|Base code(s): F28
+|[[File:Y2094.jpg|75px]]
+|-
+|
+|[[2014]]
+|[[14th Annual Hot Wheels Collectors Nationals]]
+|Metalflake Blue & Metalflake Midnight Blue
+|White stripes on sides and along top, Chris Parker signature & multicolored silly string design on sides, 14th Annual Collectors Nationals logo on roof, "MR PRKR" on white rear license plate, detailed headlights
+|[[ZAMAC]]
+|Smoke tint
+|Blue
+|"WINNER WINNER CHICKEN DINNER" on rear, "WAIT FOR THE ARTICLE" on front, [[RRPrf]]
+|BLR39
+|Thailand
+|''Dinner Car''<br>''2,000 produced''<br>Base code(s): G08
+|[[File:Collectors Nationals 14th 2014 Rodger Dodger Thailand BLR39.jpg|75px]]
+|}
+
+==2015 2nd [[Retool]] Versions==
+The '''Rodger Dodger''' has come out in the following 1/64 scale versions:
+{| class="wikitable sortable" style="font-size: 85%; text-align: left;" width="100%"
+! style="border-style: none none solid solid" |'''Col #'''
+! style="border-style: none none solid solid" |'''Year'''
+! style="border-style: none none solid solid" |'''Series'''
+! style="border-style: none none solid solid" |'''Color'''
+! style="border-style: none none solid solid" |'''Tampo'''
+! style="border-style: none none solid solid" |'''Base Color<br>/<br>Type'''
+! style="border-style: none none solid solid" |'''Window Color'''
+! style="border-style: none none solid solid" |'''Interior Color'''
+! style="border-style: none none solid solid" |'''Wheel Type'''
+! style="border-style: none none solid solid" |'''Toy #'''
+! style="border-style: none none solid solid" |'''Country'''
+! style="border-style: none none solid solid" |'''Notes'''
+! style="border-style: none none solid solid" |'''Photo'''
+|-
+|
+|[[2015]]
+|[[Camouflage Series (2015)|Camouflage]]<br>6/6
+|Orange 
+|Camo & "Rodger Dodger" in brown on sides
+|Black<br>/<br>Plastic
+|Clear
+|Chrome
+|[[J5]]
+|DFL87
+|Malaysia
+|Base code(s): H28
+|[[File:IMG_6773.JPG|75px]]
+|-
+|
+|[[2016]]
+|[[Stars & Stripes Series (2016)|Stars &amp; Stripes]]<br>10/10
+|Blue
+|Black flames; Red & white stripes; #76 & HW logo on sides, hood, roof & trunk.
+|Red<br>/<br>Plastic
+|Clear
+|Chrome
+|[[5SP|Black 5SP]]
+|DLV30
+|Malaysia
+|Base code(s):
+|[[File:IMG_6772.JPG|75px]]
+|-
+|073/365
+|[[List of 2017 Hot Wheels|2017]]
+|[[Holiday Racers Mini Collection (2017)|Holiday Racers]]<br>3/5
+|Red
+|Gold stripes on sides & hood, '[[Valentine's Day Cars#2017 Valentine's Day|Valentine's Day]]' on sides
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|Gold [[5SP]]
+|DTX44
+|Malaysia
+|Base code(s): J45
+|[[File:Rodger_Dodger_2017.png|75px]]
+|-
+|
+|[[5-Packs#2017|2017]]
+|[[Thor: Ragnarok 5-Pack]]
+|Matte Black
+|Hela on Sides 
+|Black<br>/<br>Plastic
+|Green tint
+|Chrome
+|Chrome Green [[5SP]]
+|FNX22
+|Malaysia
+|Base code(s):
+|[[File:Screen Shot 2021-02-04 at 13.00.15.png|75px]]
+|-
+|
+|[[2018]]
+|[[50th Anniversary Black and Gold Series (2018)|50th Anniversary Black and Gold]]<br>3/6
+|Matte Black
+|Blue & Gold Stripes on top, 50th Anniversary Logo
+|Gold<br>/<br>Plastic
+|Yellow tint
+|Gold
+|Gold [[5SP]]
+|FRN36 
+|Malaysia
+|Base code(s): K46, L02
+|[[File:3_50th_Anniversary_Black_and_Gold_Series.jpg|75px]]
+|-
+|
+|[[2018]]
+|Employee Exclusive
+|[[Spectraflame]] gold
+|id logo on side, "18" on sides & roof, "Hot Wheels Design", "Marketing", "Brand Creative", "DEVELOPMENT" on sides, "50" on hood
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|[[ID]]
+|N/A
+|Malaysia
+|Base code(s): N03
+|[[File:Rodger Dodger Employee Exclusive 2018.jpg|75px]]
+|-
+|
+|[[2019]]
+|[[Larry Wood 50th Anniversary Series (2019)|Larry Wood 50th Anniversary]]<br>10/10
+|Pearl White
+|Yellow, Orange & Green flames on sides & hood, 'Rodger Dodger' on sides
+|Grey<br>/<br>Plastic
+|Green tint
+|Chrome
+|[[5SP]]
+|GBC20
+|Thailand
+|Base code(s):
+|[[File:Rodger Dodger. Larry Wood. 2019.jpg|75px]]
+|-
+|
+|[[2019]]
+|[[Hot Wheels id#HW Race Team|Hot Wheels id: HW Race Team]]<br>03/05
+|Spectraflame Gray
+|Gold & Black racing stripes on sides & roof, "68", sponsors on sides & roof
+|Clear<br>/<br>Plastic
+|Smoke tint
+|Black
+|Chrome Red Rim, Black [[ID]]
+|FXB21 
+|Malaysia
+|[[:Category:Amazon Exclusive|''Amazon Exclusive'']]<br>Base code(s):
+|[[File:71755286_2416017085332398_4931862438636158976_o.jpg|75px]]
+|-
+|067/250
+|[[List of 2020 Hot Wheels|2020]]
+|[[HW Art Cars Mini Collection (2020)|HW Art Cars]]<br>8/10
+|Matte Black
+|Gold clockwork graphics on sides & hood, 'R' on hood, 'Steam' on right side, 'Punk' on left side
+|Gold<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|Gold Rim, Grey [[DD8]]
+|GHC20
+|Malaysia 
+|Base code(s): M39, M37 
+|[[File:GHC20-3.JPG|75px]]
+|-
+|067/250
+|[[List of 2020 Hot Wheels|2020]]
+|[[HW Art Cars Mini Collection (2020)|HW Art Cars]]<br>8/10
+|Gold
+|Grey & Black gear design sides & hood. Grey over Black "R" on top.<br>"Steam" on right side, "Punk" on left side.
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|Gold Rim, Brown [[DD8]]
+|GHG60
+|Malaysia
+|''[[Kroger]] Exclusive''<br>Base code(s): N05
+|[[File:SteamPunkRodgerDodgerGold.jpg|75px]]
+|-
+|067/250
+|[[List of 2020 Hot Wheels|2020]]
+|[[HW Art Cars Mini Collection (2020)|HW Art Cars]]<br>8/10
+|Matte Metalfake Grey
+|Gold & Black gear design sides & hood. Gold over Black "R" on top,<br>'Steam' on right side, 'Punk' on left side
+|Black<br>/<br>Plastic
+|Bronze tint 
+|Chrome 
+|Gold [[DD8]]
+|GHD92
+|Malaysia
+|Base code(s): N21, N23, N26
+|[[File:SteamPunkRodgerDodgerGrey.jpg|75px]]
+|-
+|
+|[[2020]]
+|[[Hot Wheels Monster Trucks|Monster Truck + Original Car Pack]]
+|Orange
+|Black design on top and sides, “68” on trunk
+|Black<br>/<br>Plastic 
+|Blue tint
+|Chrome
+|[[5SP]]
+|GRH83
+|Thailand 
+|Paired with [[Rodger Dodger (Monster Truck)]]<br>Base code(s):
+|[[File:Sem Título-3Roger Doger Monster Truck GHR83.jpg|75px]]
+|-
+|
+|[[2020]]
+|[[Hot Wheels id#Rod Squad|Hot Wheels id: Rod Squad]]<br>01/04
+|[[Spectraflame]] Yellow
+|Yellow & black flames on hood & sides, HWid logo on rear quarter panel
+|Transparent Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|Chrome [[ID]]
+|GML39
+|Malaysia
+|Base code(s): N03
+|[[File:HW GML39 Rodger Dodger.jpg|75px]]
+|-
+|073/250
+|[[List of 2021 Hot Wheels|2021]]
+|[[Mattel Games Mini Collection (2021)|Mattel Games]]<br>2/5
+|rowspan="2" |Black
+|rowspan="2" |8 ball on doors & 'Magic 8 Ball' behind rear tire, blue triangle on base with [[:File:2021 Rodger Dodger 8Ball Versions.png|various phrases]]
+|rowspan="2" |Black<br>/<br>Plastic
+|rowspan="2" |Clear
+|rowspan="2" |Chrome
+|rowspan="2" |Chrome Lip [[MC5 (muscle)|MC5]]
+|GRY70 
+|rowspan="2" |Malaysia
+|''Playable in [[Unleashed]] & [[Hot Wheels Unleashed 2: Turbocharged|Turbocharged]]''<br>Base Code(s): N44, N42, N40, N43, N44, N46
+|rowspan="2" |[[File:8BallRodger.jpg|75px]]
+|-
+|
+|[[2021]]
+|[[MEGA Showcase Hot Wheels|MEGA Showcase]]
+|HDJ98
+|''Identical to GRY70''<br>Base code(s):
+|-
+|073/250
+|[[List of 2021 Hot Wheels|2021]]
+|[[Mattel Games Mini Collection (2021)|Mattel Games]]<br>2/5 
+|[[Spectraflame]] Black
+|8 ball on doors & 'Magic 8 Ball' behind rear tire, blue triangle on base base with [[:File:2021 Rodger Dodger 8Ball Versions.png|various phrases]]
+|Black<br>/<br>Plastic 
+|Smoke tint
+|Chrome 
+|Chrome Rim, Black  [[RR5SP]]
+|GTD11
+|Malaysia 
+|'''[[2021 Treasure Hunts Series|Super Treasure Hunt]]'''<br>''Playable in [[Unleashed]], [[Hot Wheels Unleashed 2: Turbocharged|Turbocharged]] & [[Hot Wheels Infinite Rush|Infinite Rush]]''<br>Base code(s):
+|[[File:Magic 8 Ball Rodger Dodger.PNG|75px]]
+|-
+|
+|[[2022]]
+|[[International Gold Editions]]
+|Matte gold
+|Black stripes, "22" on sides
+|Black<br>/<br>Plastic
+|Smoke tint
+|Gold chrome
+|[[5SP]]
+|HCW12
+|Malaysia
+|Base code(s): P52
+|[[File:Rodger Dodger HCW12 2022.jpg|75px]]
+|-
+|
+|[[2022]]
+|[[Virtual Garage|NFT Garage (Series 1)]]<br>#30
+|[[Spectraflame]]  blue
+|Hot Wheels Racing livery, "68" on rear quarter panel & roof
+|[[ZAMAC]]
+|Light blue tint
+|Chrome
+|Red chrome rim, black [[RR5SP]]
+|HLP62
+|Malaysia
+|''1,200 produced''<br>Base code(s): R06
+|[[File:HOT WHEELS 2022 - GARAGE SERIES 1 - RODGER DODGER - NFT.png|75px]]
+|-
+|032/250
+|[[List of 2023 Hot Wheels|2023]]
+|[[HW Dream Garage Mini Collection (2023)|HW Dream Garage]]<br>2/5
+|Matte White
+|Black & Gold "Digigold" design, "73", HW Logo
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome Gold
+|Matte White [[MC5 (muscle)|MC5]]
+|HKJ49
+|Malaysia
+|''[[Hot Wheels Unleashed|Hot Wheels Unleashed Design Battle contest winner]]''<br>Base code(s): R36, R38
+|[[File:HKJ49-LOOSE.jpg|75px]]
+|
+|-
+|077/250 
+|[[List of 2024 Hot Wheels|2024]]
+|[[HW Celebration Racers Mini Collection (2024)|HW Celebration Racers]]<br>5/10
+|Gray 
+|Black and red stripes on sides and hood, red flame on sides, "29" on sides and roof, "LEAP YEAR" on sides, Hot Wheels logo on sides
+|Chrome<br>/<br>Plastic
+|Clear
+|Red
+|Grey [[5SP]]
+|HRY99
+|Malaysia
+|Base code(s): S43, S45, S49 
+|[[File:Rodger Dodger - 2024 - HW Celebration Racers - HRY99.jpg|75px]]
+|-
+|067/250
+| rowspan="2" |[[List of 2025 Hot Wheels|2025]]
+|''[[Hot Wheels Let's Race Mini Collection (2025)|Hot Wheels Let's Race]]''<br>4/5
+| rowspan="2" |Metallic White
+| rowspan="2" |Yellow, Orange & Green flames on sides & hood.
+| rowspan="2" | Gray<br>/<br>Plastic
+| rowspan="2" |Green tint
+| rowspan="2" |Chrome
+| rowspan="2" |[[J5]]
+|HYX12
+| rowspan="2" |Malaysia
+|''[[Hot Wheels Let's Race]]''<br>Base code(s): T40, T41, T42, T43, T44, T50, T50N
+| rowspan="2" |[[File:2025 Rodger Dodger.jpg|75px]]
+|-
+|
+|[[Hot Wheels Let's Race 10-Pack]]
+|JGN40
+|
+|-
+|019/250
+|[[List of 2026 Hot Wheels|2026]]
+|[[HW Fan Driven Mini Collection (2026)|HW Fan Driven]]<br>2/5
+|Metalflake Teal
+|"R" with white stripe, "D" with gold stripe, and gray Hot Wheels logo on sides
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|[[5SP]]
+|JJH94
+|Malaysia
+|''Playable in [[Hot Wheels Infinite Rush|Infinite Rush]]''
+Base code(s): U33N, U34N, U36N, U39N, U46N
+|[[File:FanDrivenDodger.jpg|75px]]
+|-
+|019/250
+|[[List of 2026 Hot Wheels|2026]]
+|[[HW Fan Driven Mini Collection (2026)|HW Fan Driven]]<br>2/5
+|Metalflake Blue
+|"R" with white stripe, "D" with light blue stripe, and gray Hot Wheels logo on sides
+|Black<br>/<br>Plastic
+|Light blue tint
+|Chrome
+|Gray [[5SP]]
+|JJM51
+|Malaysia
+|''[[Kroger|Kroger Exclusive]]''<br>Base code(s): U42N
+|[[File:Rodger Dodger Krog2026.jpg|75px]]
+|-
+|019/250
+|[[List of 2026 Hot Wheels|2026]]
+|[[HW Fan Driven Mini Collection (2026)|HW Fan Driven]]<br>2/5
+|Black
+|"R" with white stripe, "D" with red stripe, and gray Hot Wheels logo on sides
+|Gray<br>/<br>Plastic
+|Smoke tint
+|Gray
+|Chrome red lip, black [[MC5 (muscle)|MC5]]
+|JJK71
+|Malaysia
+|Base code(s): U51N, V02N
+|[[File:BlackDodger.jpg|75px]]
+|-
+|045/250
+|[[List of 2027 Hot Wheels|2027]]
+|[[Then and Now Mini Collection (2027)|Then and Now]]<br>1/10
+|Red
+|White & black striping and Hot Wheels logo on sides
+|Black<br>/<br>Plastic
+|Smoke tint
+|Chrome
+|Chrome red rim, black [[PR5]]
+|JNY19
+|Malaysia
+|Base code(s): V35N, V39N
+|[[File:ThenandNowDodger.jpg|75px]]
+|}
+
+==See also==
+*[[Show-Off]]
+*[[Dixie Challenger]]
+*[[Bye-Focal]]
+*[[Rodger Dodger (Monster Truck)]]
+*[[Rodger Dodger (Sizzlers)]]
+*[[Rodger Dodger 2.0]]
+*[[Eroded Rodger Dodger]]
+*[[Mega Construx Rodger Dodger (5+)]]
+
+==Gallery==
+<gallery>
+Rodger Newsletter proto.JPG|Prototype found in a June/ August 1996 Newsletter article. Meant for the [[Super Chromes (1976)]] series but with Orange / Yellow Flames.
+35 Years of Speed Randy Leffingwell Rodger (1).JPG|Prototype for the [[Hi-Rakers]] series
+35 Years of Speed Randy Leffingwell Rodger (2).JPG|...with no Body (Randy Leffingwell)
+35 Years of Speed Randy Leffingwell Rodger.JPG|[[Super Chromes]] Prototype (Randy Leffingwell)
+Rodger Dodger alt color thanks seville.JPG|Alternate color Rodger Dodger
+Color vari rodger GOLD RL 77.JPG|Light Gold & Dark Gold Redline color variation
+PinkRodgerDodger.jpg|Pink Rodger Dodger- National Toy Auction- back in the day phone bidding
+IMG 0445.jpg|blue Rodger Dodger from the top
+20241210 071415384 iOS.jpg|Rodger Dodger 2025 Hot Wheels Let's Race 67/250
+IMG 0446.jpg|blue Rodger Dodger from left side
+IMG 0447.jpg|blue Rodger Dodger from right side
+IMG 0448.jpg|blue Rodger Dodger from base
+IMG 0451.jpg|blue Rodger Dodger right
+IMG 0452.jpg|blue Rodger Dodger left
+IMG 0449.jpg|blue Rodger Dodger front
+IMG 0450.jpg|blue Rodger Dodger rear
+1974 Rodger Dodger.jpg
+Fire rodger.jpg|Rodger Dodger - Fire Rods
+Copy of 33RodgerDodger.jpg|Rodger Dodger as a playable car in Hot Wheels World Race
+33-Scorchers-RodgerDodger.png
+Rodger dodger..JPG|Rodger Dodger as a playable car in Hot Wheels Stunt Track Challenge
+Rodger Dodger CIMG1283.JPG|2003 Raptor Blast 5-Pk
+Eden Rodger dodger.JPG|Rodger Dodger in Hot Wheels Track Attack
+Rodger Dodger Track Attack 2.png|Rodger Dodger Left View in Track Attack
+Rodger Dodger Track Attack.png|Rodger Dodger Right View in Track Attack
+2=55.JPG|2006 10-pack
+RodgerDodgerPurpleFlame-1970.jpg|My favourite Rodger Dodger
+29092826 201279630637754 6711244711941636096 n.jpg
+2013-06-01-163.jpg|Super Chromes Rodger Dodger
+RodgerDodger TH 2.JPG|2001 Treasure Hunt
+Rodger Dodger. HW Classics. Spectraflame pink. Sidevue.jpg|Rodger Dodger Side View
+Rodger Dodger. HW Classics. Spectraflame pink. Rearvue.jpg|Rodger Dodger Rear View
+Rodger Dodger. HW Classics. Spectraflame pink. Frontvue.jpg|Rodger Dodger Front View
+Rodger Dodger. HW Classics. Spectraflame pink. Base.jpg|Rodger Dodger Underside View
+Rodger Dodger. HW Classics. Spectraflame pink. 1.jpg|Rodger Dodger Side View
+CFC6ED85-49EF-4FAC-982D-1CB82E369661.jpeg|2002 Spares n’ Strikes
+2007. Rodger Dodger. Classics 3..JPG|2007 Rodger Dodger
+Rodgerdodgertheundertaker.jpg|WWE series
+07CLA28b.JPG|2007
+07CLA28a.JPG|2007
+Rodger Dodger 2000 Blister 24.jpg
+12th Collectors Rodger Dodger.jpg
+2005RodgerDodger.jpg|2005 HotWheels Classics Drag Race Action Set
+HW RODGER DODGER VS MJ ORANGE.jpg|vs monster jam
+RodgerDodger10pack5.jpeg|Rodger Dodger 10-pack 2004
+RodgerDodger10pack2.jpeg|Rodger Dodger 10-pack 2004
+RodgerDodger10pack1.jpg|Rodger Dodger 10-pack 2004
+IMG 6772.JPG|2016 Stars and Stripes Series
+IMG 6773.JPG|Camouflage Series
+RodgerDodger-2017HWHR.jpg|2017 Holiday Racers.
+29092826 201279630637754 6711244711941636096 n.jpg
+2013-06-01-163.jpg|Super Chromes Rodger Dodger
+Rodger Dodger - Holiday R 3 - 17 Cx.jpg|2017 - Rodger Dodger - Holiday R 3 - 17 Cx
+Rodger Dodger (DFL87) (pack).jpg
+Rodger Dodger.JPG
+Rodger Dodger (2).JPG
+Rodger Dodger - 50 years HW.jpeg
+Rodger Dodger. Larry Wood 50. 2019.Card.jpg
+Rodger Dodger. Larry Wood 2019. Base.JPG|Rodger Dodger Underside
+Rodger Dodger 3.JPG|Rodger Dodger Rear
+Rodger Dodger 2.JPG|Rodger Dodger Right Side
+Rodger Dodger 1.JPG|Rodger Dodger Left Side
+RodgerDodger-2020-carded.jpg|2020 Card
+2246.JPG|2020 - short card
+GHC20-1.JPG|2020 Art Cars
+GHC20-2.JPG|2020 Art Cars
+GHC20-3.JPG|2020 Art Cars
+GHC20-4.JPG|2020 Art Cars
+GHC20-5.JPG|2020 Art Cars
+L1230149.JPG
+L1230150.JPG
+L1230151.JPG
+Rodger Dodger Gold Kroger Exclusive.jpg|Rodger Dodger Gold_Kroger Exclusive
+Rodger Dodger 2000 Blister 24.jpg
+IMG 20200916 224419.jpg
+IMG 20200916 224501.jpg
+IMG 20200916 224509.jpg
+IMG 20200916 224536.jpg
+GHD92 - Roger Dodger-2.jpg|2020 Mainline
+GHD92 - Roger Dodger-1.jpg|2020 Mainline
+GHD92 - Roger Dodger-1-2.jpg|2020 Version
+DSC01465.JPG|Rodger Dodger (comes with Orange Rodger Dodger Monster Truck)
+MonsterTruck.jpg|2020 Monster Truck Rodger Dodger (2 Pack Truck w/ Car)
+DSC01466.JPG|Gold (Kroger Exclusive) HW Art Rodger Dodger
+RODGER DODGER GHD92.jpg
+HW RODGER DODGER Multipacks exclusive MATBLACK.jpg
+2021 Rodger Dodger 8Ball Versions.png|All underside messages from 2021 8-Ball
+Rodger Dodger 2021-GTD11 (1).jpg|Rodger Dodger 2021-GTD11
+Rodger Dodger 2021-GTD11 (7).jpg|Rodger Dodger 2021-GTD11
+Rodger Dodger 2021-GTD11 (9).jpg|Rodger Dodger 2021-GTD11
+Rodger Dodger 2021-GTD11 (8).jpg|Rodger Dodger 2021-GTD11
+Rodger Dodger 2021-GTD11 (11).jpg|Rodger Dodger 2021-GTD11
+Rodger dodger 2021.jpg
+WhatsApp Image 2021-02-04 at 12.32.08 PM.jpeg|message under the car
+WhatsApp Image 2021-02-04 at 12.32.09 PM.jpeg
+2585.JPG|2021
+WhatsApp Image 2021-03-03 at 17.07.41.jpeg|2021 Super T-Hunt
+WhatsApp Image 2021-03-03 at 17.07.43.jpeg|2021 Super T-Hunt Message
+RodgerDodgerHWUBase1.png|Base in Hot Wheels Unleashed (Regular)
+RodgerDodgerHWUBase2.png|Base in Hot Wheels Unleashed (STH)
+Htw-veichles-rodger-dodger.png|in [[Hot Wheels Unleashed]]
+Magic 8 Ball Rodger Dodger.PNG
+Rodger Dodger Larry Wood Col.png|Larry Wood Collection
+Rodger Dodger Larry.jpg|Code 3
+HKJ49.jpg
+HNI 0088.jpg
+Rodger-Dodger.jpg
+Flying Colors Rodger Dodger Gold Chrome BW Hong Kong 8259.jpg|Flying Colors 1977
+Patch Card Drag Strippers Rodger Dodger Gold Chrome Hong Kong 8259.jpg|Drag Strippers 1978
+PATCH DRAG STRIPPERS Street Rodder b.jpg|Mail-Away PATCH '''DRAG STRIPPERS'''
+Mainline Greased Gremlin Rodger Dodger Gold Chrome BW Hong Kong 8259.jpg|Mainline 1979
+Collectors Convention 12th 1998 Rodger Dodger China 22246.jpg|12th Annual Collectors Convention 1998
+Collectors Convention 12th 1998 Rodger Dodger China 22246 Back of Card.jpg|12th Annual Collectors Convention Back of Card 1998
+Cop Rods Series 2 2000 Rodger Dodger Malaysia 26607.jpg|Cop Rods 2000
+HWC 2001 Rodger Dodger Yellow Malaysia 56008.jpg|HWC 2001
+HWC 2002 Rodger Dodger Green Malaysia 56008.jpg|HWC 2002
+HWC 2002 Rodger Dodger Green Malaysia 56008 Certificate of Authenticity.jpg|COA included with factory sealed sets 2002
+HWC 2002 Factory Sealed Set Thank You Letter & Green Rodger Dodger Information.jpg|Thank you letter included with factory sealed sets 2002
+JC Whitney Rodger Dodger Red 85604.jpg|JC Whitney 2002
+Collectors Nationals 3rd 2003 Rodger Dodger Thailand B8532 Back of Card.jpg|3rd Annual Collectors Nationals Back of Card 2003
+RLC 2006 Rodger Dodger Antifreeze China K3381.jpg|RLC 2006
+Collectors Nationals 7th 2007 Rodger Dodger China L2117.jpg|7th Annual Collectors Nationals (RLC Party) 2007
+Collectors Nationals 7th 2007 Rodger Dodger China L2117 Back of Card.jpg|7th Annual Collectors Nationals (RLC Party) Back of Card 2007
+Set1.jpg|[[Since '68 Series#Since .2768: Collector Top 40 Set|Since '68: Collector Top 40 Set 26/40]]
+Father's Day 2008 Rodger Dodger Green Malaysia N3255.jpg|Father's Day 2008
+Fire Rods 2009 Rodger Dodger Flat Black Thailand N9020.jpg|Fire Rods 2009
+Military Rods 2009 Rodger Dodger Satin Olive Thailand N9810.jpg|Military Rods 2009
+RLC 2010 Rodger Dodger Gold Thailand R8409.jpg|RLC 2010
+Collectors Nationals 14th 2014 Rodger Dodger Thailand BLR39 Back of Card.jpg|14th Annual Collectors Nationals Back of Card 2014
+Mainline 2020 Rodger Dodger MF Matte Gray Malaysia GHD92.jpg|Mainline 2020
+NFT Garage Series 1 Rodger Dodger Blue Malaysia HLP62.jpg|NFT Garage 2022
+Mainline 2024 Rodger Dodger Light Gray Malaysia HRY99.jpg|Mainline 2024
+Mainline 2025 Rodger Dodger White Malaysia HYX12.jpg|Mainline 2025
+Mainline 2026 Rodger Dodger MF Teal Malaysia JJH94.jpg|Mainline 2026
+Mainline 2026 Rodger Dodger MF Blue Malaysia JJM51.jpg|Mainline 2026
+Mainline 2026 Rodger Dodger Black Malaysia JJK71.jpg|Mainline 2026
+ArshamKidPlayRD1.jpg|"Hot Wheels × Daniel Arsham NYC Gallery Kid Play Cars" A piece made only for the NYC Gallery for kids to send down the ocean green track; taken from the event. There was also a matching Deora II and Twin Mill. About 15 of each. Featured as part of the release gallery for the [[Eroded Rodger Dodger]].
+Daniel Arsham RD Proto.PNG|Same as above but with decals from Daniel Arsham available on Mattel Creations.
+Lot of Magic Rodger Dodgers.JPG|Lot of Magic 8 Rodger Dodgers with different Messages
+HRY99.jpg|2024
+HRY99-LOOSE.jpg|2024 Loose
+RodgerDodger.jpeg
+As I See It Yes.JPG
+Without A Doubt.JPG
+Signs Point to Yes.JPG
+Reply Hazy Try Again.JPG
+Outlook Not So Good.JPG
+My Sources Say No.JPG
+Most Likely.JPG
+Dont Count On It.JPG
+Ask Again Later.JPG
+2005RodgerDodgerFrontView.jpeg
+2005RodgerDodgerRearView.jpeg
+HWU2T - Night Shifter (Robert) & Rodger Dodger (Darla).jpg|Rodger Dodger alongside [[Night Shifter]] from [[Hot Wheels Unleashed 2: Turbocharged|Unleashed 2's]] Campaign: Creature Rampage.
+20241210 071415384 iOS.jpg
+Screenshot 20240130-183103~2.png|in [[Hot Wheels Let's Race]]
+Screenshot 20240904-215909.png|in [[Hot Wheels Let's Race]]
+HYX12.jpg|HYX12
+HYX12-back.jpg|HYX12
+Rodger Dodger 01.jpg|2025 Hot Wheels Let's Race 4/5
+Rodger Dodger package front.png
+Rodger Dodger - Classics Black.jpg
+RodgerDodgerClassics07BlackCard.jpg|Black Classics release on card.
+Classics3 3pkEXCL M1812 No4 10-11-12 r1.jpg|Walgreens Excl pk-No4 #10•(#11/12)•#12
+Classics3 3pkEXCL M1812 No4 10-11-12 r2.jpg
+Mattel 80th DISPLAY RodgerDodger WM.jpg|Large Display Back fall 2025
+USPS '18 Stamps4Ever HWsheet 1.jpg|2018 Sept 29th Forever Stamp
+USPS FOREVER 1st.Day env RODGER DODGER 1.jpg|2018 Sept 29th FOREVER Stamp & envelope
+USPS FOREVER 1st.Day env RODGER DODGER 2.jpg
+USPS FOREVER 1st.Day STAMP RODGER DODGER.jpg|voided "FOREVER Stamp" 1st day 2018 Sept 29th
+Rodger Card.jpg|2026 Card
+Rodger Bottom.jpg|2026 Bottom
+Rodger Front.jpg|2026 Front
+Rodger Back.jpg|2026 Back
+Rodger Drilled.jpg|2026 Drilled
+19 Rodger Dodger.jpg|2026 [[Kroger]]
+RODGER DODGER (blue teal) HW Fan Driven 2 5 19 250 2026 ref JJH94.jpg
+JadedRodger05EPWWECard.jpg|2005 WWE [[Entertainment 2-Packs#2005|Entertainment 2-Pack]] release on card.
+Rodgerdodger06.jpg
+</gallery>
+
+{{DEFAULTSORT:Rodger Dodger}}
+[[Category:1974 Hot Wheels]]
+[[Category:2009 Fire Rods]]
+[[Category:Flying Colors]]
+[[Category:Father's Day]]
+[[Category:Larry Wood Designs]]
+[[Category:Unlicensed Hot Wheels]]
+[[Category:2001 Hot Wheels]]
+[[Category:Hot Wheels Original Designs]]
+[[Category:Valentine's Day Cars]]
+[[Category:2010 Hot Wheels]]
+[[Category:2015 Hot Wheels]]
+[[Category:2016 Hot Wheels]]
+[[Category:2017 Hot Wheels]]
+[[Category:Holiday Cars]]
+[[Category:2008 Hot Wheels]]
+[[Category:2011 Hot Wheels]]
+[[Category:2012 Hot Wheels]]
+[[Category:2013 Hot Wheels]]
+[[Category:2014 Hot Wheels]]
+[[Category:2002 Hot Wheels]]
+[[Category:2003 Hot Wheels]]
+[[Category:2005 Hot Wheels]]
+[[Category:2006 Hot Wheels]]
+[[Category:2007 Hot Wheels]]
+[[Category:2009 Hot Wheels]]
+[[Category:1975 Hot Wheels]]
+[[Category:1977 Hot Wheels]]
+[[Category:Camouflage Series]]
+[[Category:Red Line Club]]
+[[Category:Hall of Fame]]
+[[Category:Real Life Hot Wheels]]
+[[Category:2018 Hot Wheels]]
+[[Category:Police Cars]]
+[[Category:Police Vehicles]]
+[[Category:Emergency Vehicles]]
+[[Category:Fire service vehicles]]
+[[Category:2009 Military Rods]]
+[[Category:Military Cars]]
+[[Category:Spares 'N Strikes Series]]
+[[Category:Holiday Racers Series]]
+[[Category:Cars with exposed Engines]]
+[[Category:KB Toys Exclusive]]
+[[Category:Cop Rods]]
+[[Category:RLC Rewards Cars]]
+[[Category:Holiday Hot Rods]]
+[[Category:Hot Wheels id]]
+[[Category:2019 Hot Wheels]]
+[[Category:Rodger Dodger Cars]]
+[[Category:2020 Hot Wheels]]
+[[Category:1:64]]
+[[Category:HW Art Cars Series]]
+[[Category:Coupes]]
+[[Category:Wal-Mart Exclusive]]
+[[Category:12th Annual Hot Wheels Collectors Convention]]
+[[Category:Art Cars Series]]
+[[Category:Treasure Hunts]]
+[[Category:Multipack Exclusive]]
+[[Category:1974 Flying Colors]]
+[[Category:1975 Flying Colors]]
+[[Category:1977 Flying Colors]]
+[[Category:Easter Egg-Clusives]]
+[[Category:Egg-Clusives]]
+[[Category:Kroger Exclusive]]
+[[Category:14th Annual Hot Wheels Collectors Nationals]]
+[[Category:3rd Annual Hot Wheels Collectors Nationals]]
+[[Category:Kmart Exclusive]]
+[[Category:Fourth of July Cars]]
+[[Category:Video Game Cars]]
+[[Category:Hot Wheels Classics]]
+[[Category:2009 Cop Rods]]
+[[Category:Since '68 Series]]
+[[Category:Amazon Exclusive]]
+[[Category:2021 Hot Wheels]]
+[[Category:Super Treasure Hunts]]
+[[Category:2021 Super Treasure Hunts]]
+[[Category:2001 Treasure Hunts]]
+[[Category:2005 Treasure Hunts]]
+[[Category:Retooled Versions]]
+[[Category:Mattel Games Series]]
+[[Category:2022 Hot Wheels]]
+[[Category:NFT Garage]]
+[[Category:2023 Hot Wheels]]
+[[Category:Dream Garage Series]]
+[[Category:Muscle Cars]]
+[[Category:Two/Three-door Vehicles]]
+[[Category:1978 Hot Wheels]]
+[[Category:Drag Strippers]]
+[[Category:1970s]]
+[[Category:2024 Hot Wheels]]
+[[Category:HW Celebration Racers Series]]
+[[Category:Track Set Car]]
+[[Category:2025 Hot Wheels]]
+[[Category:Hot Wheels Let's Race Series]]
+[[Category:Toys R Us Exclusive]]
+[[Category:2026 Hot Wheels]]
+[[Category:HW Fan Driven Series]]
+[[Category:2027 Hot Wheels]]
+[[Category:Then and Now Series]]
