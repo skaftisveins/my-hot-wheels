@@ -4,6 +4,7 @@ import '../app.dart';
 import '../data/collection_store.dart';
 import '../models/car.dart';
 import '../widgets/car_image.dart';
+import '../widgets/own_photo.dart';
 
 /// Síðasta skrefið í skráningu (og skjárinn til að breyta bíl).
 /// Reitirnir eru fylltir út fyrir fram með gögnum af wiki ef þau eru til.
@@ -23,7 +24,13 @@ class _CarFormScreenState extends State<CarFormScreen> {
   late CarCondition _condition = widget.car.condition;
   late int _quantity = widget.car.quantity;
   late bool _favorite = widget.car.favorite;
+  late String? _ownPhoto = widget.car.ownPhoto;
   bool _saving = false;
+
+  Future<void> _takePhoto() async {
+    final id = await takeOwnPhoto(context);
+    if (id != null && mounted) setState(() => _ownPhoto = id);
+  }
 
   TextEditingController _c(String key) => _fields[key]!;
 
@@ -84,6 +91,7 @@ class _CarFormScreenState extends State<CarFormScreen> {
     country: _value('country'),
     designer: _value('designer'),
     imageUrl: _value('imageUrl'),
+    ownPhoto: _ownPhoto,
     notes: _value('notes'),
     condition: _condition,
     quantity: _quantity,
@@ -167,17 +175,16 @@ class _CarFormScreenState extends State<CarFormScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
           children: [
-            if (imageUrl != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: CarImage(url: imageUrl, iconSize: 64),
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: _PhotoPanel(
+                image: _ownPhoto != null ? 'local:$_ownPhoto' : imageUrl,
+                isOwnPhoto: _ownPhoto != null,
+                canUseWikiPhoto: _ownPhoto != null && imageUrl != null,
+                onTakePhoto: _takePhoto,
+                onUseWikiPhoto: () => setState(() => _ownPhoto = null),
               ),
+            ),
             if (duplicate != null)
               Padding(
                 padding: const EdgeInsets.only(top: 12),
@@ -356,6 +363,77 @@ class _CarFormScreenState extends State<CarFormScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Myndin efst í forminu, með hnöppum til að taka eigin mynd eða nota wiki-myndina.
+class _PhotoPanel extends StatelessWidget {
+  const _PhotoPanel({
+    required this.image,
+    required this.isOwnPhoto,
+    required this.canUseWikiPhoto,
+    required this.onTakePhoto,
+    required this.onUseWikiPhoto,
+  });
+
+  final String? image;
+  final bool isOwnPhoto;
+  final bool canUseWikiPhoto;
+  final VoidCallback onTakePhoto;
+  final VoidCallback onUseWikiPhoto;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    if (image == null) {
+      return OutlinedButton.icon(
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(120),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        ),
+        onPressed: onTakePhoto,
+        icon: const Icon(Icons.photo_camera_rounded, size: 32),
+        label: const Text('Taka mynd af bílnum'),
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: CarImage(url: image, iconSize: 64),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 4,
+          children: [
+            FilledButton.tonalIcon(
+              onPressed: onTakePhoto,
+              icon: const Icon(Icons.photo_camera_rounded),
+              label: Text(isOwnPhoto ? 'Taka nýja mynd' : 'Taka eigin mynd'),
+            ),
+            if (canUseWikiPhoto)
+              TextButton.icon(
+                onPressed: onUseWikiPhoto,
+                icon: const Icon(Icons.public_rounded),
+                label: const Text('Nota wiki-myndina'),
+              ),
+          ],
+        ),
+        if (isOwnPhoto)
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(
+              'Myndin er geymd í þessu tæki.',
+              style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+            ),
+          ),
+      ],
     );
   }
 }

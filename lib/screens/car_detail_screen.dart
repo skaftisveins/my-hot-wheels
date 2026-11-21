@@ -9,6 +9,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../app.dart';
 import '../models/car.dart';
 import '../services/device_tilt.dart';
+import '../services/photo_store.dart';
+import '../widgets/own_photo.dart';
 import '../widgets/showroom_photo.dart';
 import 'car_form_screen.dart';
 
@@ -164,19 +166,32 @@ class _CarDetailScreenState extends State<CarDetailScreen> with SingleTickerProv
     if (showChrome) _setChrome(true);
   }
 
+  /// Sviðslitirnir fylgja myndinni, svo þeir breytast ef ný mynd er tekin.
   void _resolveStage(Car car) {
-    final url = car.imageUrl;
-    if (url == null || _stage.containsKey(car.id)) return;
-    _stage[car.id] = StageColors.fallback;
+    final url = car.displayImage;
+    if (url == null || _stage.containsKey(url)) return;
+    _stage[url] = StageColors.fallback;
     stageColorsFor(url).then((colors) {
-      if (mounted) setState(() => _stage[car.id] = colors);
+      if (mounted) setState(() => _stage[url] = colors);
     });
   }
 
+  StageColors _stageFor(Car car) => _stage[car.displayImage] ?? StageColors.fallback;
+
   StageColors _stageAt(List<Car> cars, double page) {
-    StageColors at(int i) => _stage[cars[i.clamp(0, cars.length - 1)].id] ?? StageColors.fallback;
+    StageColors at(int i) => _stageFor(cars[i.clamp(0, cars.length - 1)]);
     final lower = page.floor();
     return StageColors.lerp(at(lower), at(lower + 1), page - lower);
+  }
+
+  Future<void> _takePhoto(Car car) async {
+    _stopSlideshow();
+    final store = AppScope.readStore(context);
+    final id = await takeOwnPhoto(context);
+    if (id == null) return;
+    final previous = car.ownPhoto;
+    await store.setOwnPhoto(car.id, id);
+    if (previous != null) await PhotoStore.instance.delete(previous);
   }
 
   Future<void> _delete(Car car) async {
@@ -265,7 +280,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> with SingleTickerProv
 
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
     final fade = reduceMotion ? Duration.zero : const Duration(milliseconds: 260);
-    final current = _stage[car.id] ?? StageColors.fallback;
+    final current = _stageFor(car);
     final theme = ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: current.glow, brightness: Brightness.dark),
     );
@@ -370,6 +385,10 @@ class _CarDetailScreenState extends State<CarDetailScreen> with SingleTickerProv
                             );
                           },
                           onDelete: () => _delete(car),
+                          onTakePhoto: () => _takePhoto(car),
+                          onUseWikiPhoto: car.ownPhoto != null && car.imageUrl != null
+                              ? () => store.setOwnPhoto(car.id, null)
+                              : null,
                         ),
                       ),
                     ),
@@ -476,8 +495,14 @@ class _StagePage extends StatelessWidget {
     final photo = Hero(
       tag: 'car-${car.id}',
       // Á fluginu milli skjáa sést bara kortið sjálft, án spegilmyndar.
-      flightShuttleBuilder: (_, _, _, _, _) => ShowroomPhoto(url: car.imageUrl, reflection: false),
-      child: ShowroomPhoto(url: car.imageUrl, kenBurns: kenBurns, parallax: parallax, sheen: sheen),
+      flightShuttleBuilder: (_, _, _, _, _) =>
+          ShowroomPhoto(url: car.displayImage, reflection: false),
+      child: ShowroomPhoto(
+        url: car.displayImage,
+        kenBurns: kenBurns,
+        parallax: parallax,
+        sheen: sheen,
+      ),
     );
 
     // Þegar flett er hallar kortið aðeins í þrívídd og minnkar.
@@ -510,7 +535,7 @@ class _StagePage extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: onTap,
-      onDoubleTap: car.imageUrl == null ? null : onDoubleTap,
+      onDoubleTap: car.displayImage == null ? null : onDoubleTap,
       child: AnimatedPadding(
         duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 320),
         curve: Curves.easeOutCubic,
@@ -585,7 +610,7 @@ class _ZoomViewState extends State<_ZoomView> with SingleTickerProviderStateMixi
                   padding: const EdgeInsets.all(8),
                   child: Hero(
                     tag: 'car-${widget.car.id}',
-                    child: ShowroomPhoto(url: widget.car.imageUrl, reflection: false),
+                    child: ShowroomPhoto(url: widget.car.displayImage, reflection: false),
                   ),
                 ),
               ),
@@ -619,6 +644,8 @@ class _TopBar extends StatelessWidget {
     required this.onPlay,
     required this.onEdit,
     required this.onDelete,
+    required this.onTakePhoto,
+    this.onUseWikiPhoto,
     this.onEnableTilt,
   });
 
@@ -631,6 +658,8 @@ class _TopBar extends StatelessWidget {
   final VoidCallback onPlay;
   final VoidCallback onEdit;
   final VoidCallback onDelete;
+  final VoidCallback onTakePhoto;
+  final VoidCallback? onUseWikiPhoto;
 
   /// Sýnt á iPhone þar sem biðja þarf um leyfi til að lesa halla símans.
   final VoidCallback? onEnableTilt;
@@ -696,6 +725,23 @@ class _TopBar extends StatelessWidget {
                 tooltip: 'Meira',
                 icon: const Icon(Icons.more_vert_rounded, color: onStage),
                 itemBuilder: (_) => [
+                  PopupMenuItem(
+                    onTap: onTakePhoto,
+                    child: const ListTile(
+                      leading: Icon(Icons.photo_camera_outlined),
+                      title: Text('Taka mynd af bílnum'),
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                  ),
+                  if (onUseWikiPhoto != null)
+                    PopupMenuItem(
+                      onTap: onUseWikiPhoto,
+                      child: const ListTile(
+                        leading: Icon(Icons.public_rounded),
+                        title: Text('Nota wiki-myndina'),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                    ),
                   PopupMenuItem(
                     onTap: onEdit,
                     child: const ListTile(

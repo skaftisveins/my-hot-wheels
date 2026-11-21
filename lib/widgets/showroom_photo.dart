@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
 
+import 'car_photo.dart';
 import 'cutout.dart';
 
 /// Myndaþjónn Hot Wheels Wiki skilar myndum í þeirri breidd sem beðið er um
@@ -22,7 +22,7 @@ Future<double?> imageAspect(String url) {
   if (cached != null) return Future.value(cached);
 
   final completer = Completer<double?>();
-  final stream = CachedNetworkImageProvider(url).resolve(ImageConfiguration.empty);
+  final stream = imageProviderFor(url).resolve(ImageConfiguration.empty);
   late final ImageStreamListener listener;
   listener = ImageStreamListener(
     (info, _) {
@@ -79,7 +79,7 @@ Future<StageColors> stageColorsFor(String? url) async {
   final cached = _stageCache[url];
   if (cached != null) return cached;
   try {
-    final image = await _decode(CachedNetworkImageProvider(url));
+    final image = await _decode(imageProviderFor(url));
     final bytes = await image.toByteData();
     if (bytes == null) return StageColors.fallback;
     final paint = dominantPaint(bytes.buffer.asUint8List(), image.width, image.height);
@@ -490,14 +490,17 @@ class _Layers extends StatelessWidget {
     final image = Stack(
       fit: StackFit.expand,
       children: [
-        CachedNetworkImage(imageUrl: url, fit: BoxFit.cover, fadeInDuration: Duration.zero),
+        Image(image: imageProviderFor(url), fit: BoxFit.cover, gaplessPlayback: true),
         if (hiRes != url)
-          CachedNetworkImage(
-            imageUrl: hiRes,
+          Image(
+            image: imageProviderFor(hiRes),
             fit: BoxFit.cover,
-            fadeInDuration: const Duration(milliseconds: 400),
-            placeholder: (_, _) => const SizedBox.shrink(),
-            errorWidget: (_, _, _) => const SizedBox.shrink(),
+            frameBuilder: (_, child, frame, sync) => AnimatedOpacity(
+              opacity: sync || frame != null ? 1 : 0,
+              duration: const Duration(milliseconds: 400),
+              child: child,
+            ),
+            errorBuilder: (_, _, _) => const SizedBox.shrink(),
           ),
       ],
     );

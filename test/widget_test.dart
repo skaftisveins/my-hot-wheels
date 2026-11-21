@@ -7,6 +7,7 @@ import 'package:hot_wheels_safn/models/car.dart';
 import 'package:hot_wheels_safn/screens/add_car_search_screen.dart';
 import 'package:hot_wheels_safn/screens/casting_screen.dart';
 import 'package:hot_wheels_safn/services/hot_wheels_wiki_api.dart';
+import 'package:hot_wheels_safn/services/photo_store.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,6 +15,7 @@ import 'support/fake_wiki.dart';
 
 Future<CollectionStore> pumpApp(WidgetTester tester, {List<Car> cars = const []}) async {
   SharedPreferences.setMockInitialValues({});
+  PhotoStore.instance = MemoryPhotoStore();
   final store = CollectionStore(await SharedPreferences.getInstance());
   for (final car in cars) {
     await store.add(car);
@@ -123,6 +125,43 @@ void main() {
     expect(store.cars.single.name, 'Lögreglubíll');
     expect(store.cars.single.year, 2025);
     expect(store.cars.single.condition, CarCondition.carded);
+  });
+
+  testWidgets('manual registration offers to take a photo', (tester) async {
+    await pumpApp(tester);
+    await tester.tap(find.text('Skrá bíl'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Finnurðu ekki bílinn? Skráðu hann handvirkt'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Taka mynd af bílnum'));
+    await tester.pumpAndSettle();
+    expect(find.text('Settu bílinn á hvítt blað eða ljósan, sléttan flöt.'), findsOneWidget);
+    expect(find.text('Taka mynd'), findsOneWidget);
+    expect(find.text('Velja úr myndasafni'), findsOneWidget);
+  });
+
+  testWidgets('the showroom menu can switch back to the wiki photo', (tester) async {
+    final store = await pumpApp(
+      tester,
+      cars: [
+        Car(
+          id: 'a',
+          name: 'Twin Mill',
+          imageUrl: 'https://img.test/a.png',
+          ownPhoto: 'p1',
+          addedAt: DateTime(2026),
+        ),
+      ],
+    );
+    await tester.tap(find.text('Twin Mill'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip('Meira'));
+    await tester.pumpAndSettle();
+    expect(find.text('Taka mynd af bílnum'), findsOneWidget);
+    await tester.tap(find.text('Nota wiki-myndina'));
+    await tester.pumpAndSettle();
+    expect(store.byId('a')!.ownPhoto, isNull);
   });
 
   testWidgets('warns about duplicates and can add a copy instead', (tester) async {

@@ -32,6 +32,7 @@ class Car {
     this.country,
     this.designer,
     this.imageUrl,
+    this.ownPhoto,
     this.condition = CarCondition.loose,
     this.quantity = 1,
     this.favorite = false,
@@ -64,7 +65,15 @@ class Car {
   final String? interiorColor;
   final String? country;
   final String? designer;
+
+  /// Mynd af wiki (eða slóð sem slegin var inn).
   final String? imageUrl;
+
+  /// Auðkenni myndar sem tekin var í appinu (geymd í [PhotoStore]).
+  final String? ownPhoto;
+
+  /// Myndin sem er sýnd: eigin mynd ef hún er til, annars wiki-myndin.
+  String? get displayImage => ownPhoto != null ? 'local:$ownPhoto' : imageUrl;
   final CarCondition condition;
 
   /// Hversu mörg eintök af nákvæmlega þessum bíl eru til.
@@ -108,6 +117,7 @@ class Car {
     String? country,
     String? designer,
     String? imageUrl,
+    String? ownPhoto,
     CarCondition? condition,
     int? quantity,
     bool? favorite,
@@ -132,6 +142,7 @@ class Car {
       country: country ?? this.country,
       designer: designer ?? this.designer,
       imageUrl: imageUrl ?? this.imageUrl,
+      ownPhoto: ownPhoto ?? this.ownPhoto,
       condition: condition ?? this.condition,
       quantity: quantity ?? this.quantity,
       favorite: favorite ?? this.favorite,
@@ -158,6 +169,7 @@ class Car {
     'country': country,
     'designer': designer,
     'imageUrl': imageUrl,
+    'ownPhoto': ownPhoto,
     'condition': condition.name,
     'quantity': quantity,
     'favorite': favorite,
@@ -183,6 +195,7 @@ class Car {
     country: json['country'] as String?,
     designer: json['designer'] as String?,
     imageUrl: json['imageUrl'] as String?,
+    ownPhoto: json['ownPhoto'] as String?,
     condition: CarCondition.fromName(json['condition'] as String?),
     quantity: (json['quantity'] as num?)?.toInt() ?? 1,
     favorite: json['favorite'] as bool? ?? false,

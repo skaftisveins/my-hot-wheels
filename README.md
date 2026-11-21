@@ -29,6 +29,11 @@ gegnum safnið og skoða bílana.
     stendur sjálfur á gljáandi gólfi með skugga og spegilmynd. Þetta er reiknað
     í tækinu sjálfu, ókeypis. Teikningar, plakat og hvítir bílar á hvítu
     haldast sem gljáandi kort.
+  - **Eigin myndir:** í valmyndinni (⋮) eða í skráningarforminu er hægt að
+    taka mynd af bílnum (eða velja úr myndasafni). Appið gefur ráð (hvítt
+    blað, góð birta, bíllinn fylli myndina), klippir bakgrunninn burt og
+    sviðið fær lit úr lakkinu. Myndin er geymd í tækinu (IndexedDB í vafra)
+    og hægt er að skipta aftur í wiki-myndina.
   - Ljósglampi rennur yfir lakkið. Á iPhone er hægt að ýta á 🔄-hnappinn og þá
     fylgir glampinn halla símans og bíllinn hliðrast aðeins.
   - Strjúka til hliðar til að fletta (líka með mús eða örvatökkum). Kortið

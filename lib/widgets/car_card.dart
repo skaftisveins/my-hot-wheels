@@ -28,7 +28,7 @@ class CarCard extends StatelessWidget {
                 children: [
                   Hero(
                     tag: 'car-${car.id}',
-                    child: CarImage(url: car.imageUrl),
+                    child: CarImage(url: car.displayImage),
                   ),
                   if (car.favorite)
                     Positioned(

@@ -133,7 +133,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   itemBuilder: (context, index) => CarCard(
                     car: cars[index],
                     onTap: () {
-                      final url = cars[index].imageUrl;
+                      final url = cars[index].displayImage;
                       // Hlutföll myndarinnar tilbúin áður en hún flýgur inn á sviðið.
                       if (url != null) imageAspect(url);
                       Navigator.of(context).push(

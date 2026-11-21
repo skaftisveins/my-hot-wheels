@@ -119,6 +119,14 @@ class CollectionStore extends ChangeNotifier {
     await add(car);
   }
 
+  /// Setur eigin mynd á bíl ([photoId] = `null` fer aftur í wiki-myndina).
+  Future<void> setOwnPhoto(String id, String? photoId) async {
+    final car = byId(id);
+    if (car == null) return;
+    final json = car.toJson()..['ownPhoto'] = photoId;
+    await update(Car.fromJson(json));
+  }
+
   Future<void> toggleFavorite(String id) async {
     final car = byId(id);
     if (car != null) await update(car.copyWith(favorite: !car.favorite));

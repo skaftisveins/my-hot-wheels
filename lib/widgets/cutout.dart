@@ -3,8 +3,9 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:material_ui/material_ui.dart';
+
+import 'car_photo.dart';
 
 /// Bíll sem hefur verið klipptur út úr mynd (gegnsær bakgrunnur).
 class Cutout {
@@ -40,7 +41,7 @@ final _ready = <String, Cutout>{};
 
 Future<Cutout?> _make(String url) async {
   try {
-    final source = await _decode(CachedNetworkImageProvider(url));
+    final source = await _decode(imageProviderFor(url));
     const maxWidth = 900;
     final scale = math.min(1.0, maxWidth / source.width);
     final w = (source.width * scale).round();
@@ -57,7 +58,7 @@ Future<Cutout?> _make(String url) async {
     final bytes = await scaled.toByteData(format: ui.ImageByteFormat.rawStraightRgba);
     if (bytes == null) return null;
 
-    final pixels = removeBackground(bytes.buffer.asUint8List(), w, h);
+    final pixels = removeBackground(bytes.buffer.asUint8List(), w, h, ownPhoto: isLocalPhoto(url));
     if (pixels == null) return null;
 
     final completer = Completer<ui.Image>();
@@ -99,9 +100,10 @@ Future<ui.Image> _decode(ImageProvider provider) {
 /// líkur jaðarpunktinum sem fyllingin byrjaði frá og nágranna sínum.
 ///
 /// Skilar `null` ef niðurstaðan lítur ekki út eins og stakur bíll.
-CutoutPixels? removeBackground(Uint8List rgba, int w, int h) {
-  const seedTolerance = 34 * 3;
-  const stepTolerance = 14 * 3;
+CutoutPixels? removeBackground(Uint8List rgba, int w, int h, {bool ownPhoto = false}) {
+  // Símamyndir eru með meira suði og ójafnari birtu en stúdíómyndir.
+  final seedTolerance = (ownPhoto ? 40 : 34) * 3;
+  final stepTolerance = (ownPhoto ? 16 : 14) * 3;
   final n = w * h;
   final background = Uint8List(n);
   final seed = Int32List(n);
@@ -164,7 +166,10 @@ CutoutPixels? removeBackground(Uint8List rgba, int w, int h) {
 
   // Of lítið fjarlægt = flókinn bakgrunnur eða rammi; of mikið = bíllinn
   // sjálfur fór með (t.d. hvítur bíll á hvítu). Fylltur kassi = plakat/kort.
-  if (removed < 0.2 || removed > 0.72 || fill > 0.9 || boxW < w * 0.3) return null;
+  // Á eigin myndum getur bíllinn verið lítill í rammanum, svo þar má meira hverfa.
+  final maxRemoved = ownPhoto ? 0.94 : 0.72;
+  final minWidth = ownPhoto ? 0.15 : 0.3;
+  if (removed < 0.2 || removed > maxRemoved || fill > 0.9 || boxW < w * minWidth) return null;
 
   // Mjúkar brúnir: minnka bílinn um einn punkt (engin ljós rönd) og mýkja.
   final alpha = Uint8List(n);

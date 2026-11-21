@@ -1,5 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:material_ui/material_ui.dart';
+
+import 'car_photo.dart';
 
 /// Mynd af bíl. Myndir eru geymdar í skyndiminni svo safnið virki án nets.
 class CarImage extends StatelessWidget {
@@ -34,12 +35,11 @@ class CarImage extends StatelessWidget {
           colors: [colors.surfaceContainerLowest, colors.surfaceContainerHigh],
         ),
       ),
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
+      child: Image(
+        image: imageProviderFor(imageUrl),
         fit: fit,
-        fadeInDuration: const Duration(milliseconds: 150),
-        placeholder: (_, _) => placeholder,
-        errorWidget: (_, _, _) => placeholder,
+        frameBuilder: (_, child, frame, sync) => sync || frame != null ? child : placeholder,
+        errorBuilder: (_, _, _) => placeholder,
       ),
     );
   }
