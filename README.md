@@ -31,6 +31,19 @@ gegnum safnið og skoða bílana.
 Safnið er vistað á tækinu sjálfu (`shared_preferences`) og myndir eru geymdar
 í skyndiminni, svo það er hægt að skoða safnið án nettengingar.
 
+## Prófa á netinu
+
+Vefútgáfan er á **https://skaftisveins.github.io/my-hot-wheels/** og virkar
+bæði í tölvu og síma. Í símanum er hægt að velja „Bæta á heimaskjá“ (Add to
+Home Screen) og þá opnast hún eins og app.
+
+Safnið er vistað í vafranum sem er notaður hverju sinni. Bílar sem skráðir eru
+í símanum sjást því ekki í tölvunni og öfugt.
+
+Vefurinn uppfærist sjálfkrafa í hvert sinn sem ýtt er á `main`
+(`.github/workflows/deploy-pages.yml`). Á undan eru keyrðar prófanir og
+greining, svo vefurinn uppfærist ekki ef eitthvað er bilað.
+
 ## Keyrsla
 
 ```bash
