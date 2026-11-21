@@ -103,7 +103,9 @@ class _AddCarSearchScreenState extends State<AddCarSearchScreen> {
         text:
             'Skrifaðu nafnið sem stendur á bílnum eða pakkningunni, '
             't.d. „Bone Shaker“, „Twin Mill“ eða „Skyline“.\n\n'
-            'Nafnið er oft líka undir bílnum.',
+            'Nafnið er oft líka undir bílnum.\n\n'
+            'Ártalið undir bílnum er árið sem gerðin var hönnuð. '
+            'Bíllinn sjálfur getur hafa komið út nokkrum árum seinna.',
       );
     } else if (results.isEmpty && !_loading) {
       body = const _Message(
@@ -127,6 +129,12 @@ class _AddCarSearchScreenState extends State<AddCarSearchScreen> {
               ),
             ),
             title: Text(result.title, style: theme.textTheme.titleMedium),
+            subtitle: Text(
+              result.isCasting
+                  ? (result.yearsText == null ? 'Bíll' : 'Framleiddur ${result.yearsText}')
+                  : 'Sería, listi eða annað',
+              style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+            ),
             trailing: const Icon(Icons.chevron_right_rounded),
             onTap: () => Navigator.of(context)
                 .push(MaterialPageRoute<void>(builder: (_) => CastingScreen(title: result.title))),

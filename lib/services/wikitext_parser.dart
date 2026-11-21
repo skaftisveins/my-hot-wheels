@@ -33,6 +33,9 @@ class WikitextParser {
     );
   }
 
+  /// `true` ef textinn inniheldur upplýsingabox fyrir bíl (`{{casting|...}}`).
+  static bool hasCastingInfobox(String wikitext) => _findTemplate(wikitext, 'casting') != null;
+
   /// Finnur allar útgáfutöflur á síðunni.
   static List<CastingVersion> parseVersions(String wikitext) {
     final versions = <CastingVersion>[];
@@ -105,6 +108,8 @@ class WikitextParser {
     s = s.replaceAll(RegExp(r'<[^>]+>'), '');
     s = s
         .replaceAll('&nbsp;', ' ')
+        .replaceAll('&ndash;', '–')
+        .replaceAll('&mdash;', '—')
         .replaceAll('&amp;', '&')
         .replaceAll('&quot;', '"')
         .replaceAll('&#39;', "'")

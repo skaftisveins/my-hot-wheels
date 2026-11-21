@@ -9,7 +9,30 @@ MockClient fakeWikiClient({bool withThumbnails = false, List<Uri>? log}) {
   final pages = {
     'Bone Shaker': File('test/fixtures/bone_shaker.wikitext').readAsStringSync(),
     'Rodger Dodger': File('test/fixtures/rodger_dodger.wikitext').readAsStringSync(),
+    // Tvær ólíkar gerðir með næstum sama nafni.
+    'Nissan 300ZX':
+        '{{casting\n|name = Nissan 300ZX\n|years = [[1985]] - [[1996]]\n|designer = [[Larry Wood]]}}\n'
+        '==Versions==\n',
+    'Nissan 300ZX Twin Turbo':
+        '{{casting|name=Nissan 300ZX Twin Turbo|years=[[2019]] - Present|number=FYB73}}\n'
+        '==Versions==\n',
   };
+  const seriesIntro = "'''2006 First Editions''' is a series.\n{| class=\"wikitable\"\n|}";
+
+  /// Fyrsti hluti síðunnar (á undan fyrstu fyrirsögn), eins og `rvsection=0` skilar.
+  Map<String, dynamic> intro(String title) {
+    final text = pages[title] ?? seriesIntro;
+    final end = text.indexOf('\n==');
+    return {
+      'revisions': [
+        {
+          'slots': {
+            'main': {'content': end < 0 ? text : text.substring(0, end)},
+          },
+        },
+      ],
+    };
+  }
 
   http.Response json(Object body) => http.Response.bytes(
     utf8.encode(jsonEncode(body)),
@@ -34,6 +57,7 @@ MockClient fakeWikiClient({bool withThumbnails = false, List<Uri>? log}) {
                 'title': t,
                 'index': i + 1,
                 if (thumb(t) != null) 'thumbnail': {'source': thumb(t)},
+                ...intro(t),
               },
           ],
         },
@@ -48,7 +72,7 @@ MockClient fakeWikiClient({bool withThumbnails = false, List<Uri>? log}) {
       return json({
         'query': {
           'pages': [
-            for (final (i, t) in titles.indexed) {'title': t, 'index': i + 1},
+            for (final (i, t) in titles.indexed) {'title': t, 'index': i + 1, ...intro(t)},
           ],
         },
       });

@@ -104,7 +104,7 @@ class _CastingScreenState extends State<CastingScreen> {
     final facts = <(IconData, String)>[
       if (casting.designer != null) (Icons.brush_outlined, 'Hönnuður: ${casting.designer}'),
       if (casting.yearsText != null)
-        (Icons.calendar_month_outlined, 'Framleiddur: ${casting.yearsText}'),
+        (Icons.calendar_month_outlined, 'Framleiddur: ${icelandicYears(casting.yearsText)}'),
       if (casting.series != null) (Icons.flag_outlined, 'Kom fyrst í: ${casting.series}'),
     ];
 

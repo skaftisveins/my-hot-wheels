@@ -1,10 +1,26 @@
 /// Leitarniðurstaða af Hot Wheels Wiki.
 class WikiSearchResult {
-  const WikiSearchResult({required this.title, this.thumbnailUrl});
+  const WikiSearchResult({
+    required this.title,
+    this.thumbnailUrl,
+    this.isCasting = true,
+    this.yearsText,
+  });
 
   final String title;
   final String? thumbnailUrl;
+
+  /// `false` ef síðan er um seríu, lista eða annað en einn bíl.
+  final bool isCasting;
+
+  /// Framleiðsluár bílgerðarinnar, t.d. „2019 – í dag“.
+  final String? yearsText;
 }
+
+/// Gerir framleiðsluár af wiki læsileg á íslensku: „2019 - Present“ -> „2019 – í dag“.
+String? icelandicYears(String? years) => years
+    ?.replaceAll(RegExp(r'\s*(?:-|&ndash;|–)\s*'), ' – ')
+    .replaceAll(RegExp(r'\bPresent\b', caseSensitive: false), 'í dag');
 
 /// Ein útgáfa af bíl eins og hún er skráð í töflu á wiki-síðunni
 /// (ein lína í „Versions“ töflunni).

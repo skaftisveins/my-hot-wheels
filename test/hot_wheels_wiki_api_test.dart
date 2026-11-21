@@ -14,6 +14,26 @@ void main() {
     expect(results.first.thumbnailUrl, 'https://img.test/Bone_Shaker.png');
   });
 
+  test('search shows production years so similar castings can be told apart', () async {
+    final api = HotWheelsWikiApi(client: fakeWikiClient());
+    final results = await api.search('nissan 300zx');
+
+    expect(results.map((r) => r.title), ['Nissan 300ZX', 'Nissan 300ZX Twin Turbo']);
+    expect(results.map((r) => r.yearsText), ['1985 – 1996', '2019 – í dag']);
+    expect(results.every((r) => r.isCasting), isTrue);
+  });
+
+  test('pages without a casting infobox are marked and listed last', () async {
+    final api = HotWheelsWikiApi(client: fakeWikiClient());
+    final results = await api.search('bone');
+
+    expect(results.first.isCasting, isTrue);
+    expect(results.first.yearsText, '2006 – í dag');
+    expect(results.last.title, '2006 First Editions');
+    expect(results.last.isCasting, isFalse);
+    expect(results.last.yearsText, isNull);
+  });
+
   test('empty search does not hit the network', () async {
     final log = <Uri>[];
     final api = HotWheelsWikiApi(client: fakeWikiClient(log: log));

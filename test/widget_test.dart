@@ -64,7 +64,9 @@ void main() {
     await tester.pump(const Duration(milliseconds: 500));
     await tester.pumpAndSettle();
     expect(find.text('Bone Shaker'), findsOneWidget);
+    expect(find.text('Framleiddur 2006 – í dag'), findsOneWidget);
     expect(find.text('2006 First Editions'), findsOneWidget);
+    expect(find.text('Sería, listi eða annað'), findsOneWidget);
 
     await tester.tap(find.text('Bone Shaker'));
     await tester.pumpAndSettle();

@@ -36,10 +36,15 @@ class HotWheelsWikiApi {
     final q = query.trim();
     if (q.isEmpty) return const [];
 
+    // Sækjum líka fyrsta hluta hverrar síðu (upplýsingaboxið) svo hægt sé að
+    // sýna framleiðsluárin og þekkja síður sem eru ekki um einn bíl.
     final common = {
-      'prop': 'pageimages',
+      'prop': 'pageimages|revisions',
       'piprop': 'thumbnail',
       'pithumbsize': '$_thumbWidth',
+      'rvprop': 'content',
+      'rvslots': 'main',
+      'rvsection': '0',
       'redirects': '1',
     };
     final results = await Future.wait([
@@ -68,17 +73,26 @@ class HotWheelsWikiApi {
         final title = page['title'] as String;
         if (!seen.add(title)) continue;
         final thumb = page['thumbnail'] as Map<String, dynamic>?;
-        merged.add(WikiSearchResult(title: title, thumbnailUrl: thumb?['source'] as String?));
+        final revision = (page['revisions'] as List?)?.firstOrNull as Map<String, dynamic>?;
+        final intro = ((revision?['slots'] as Map?)?['main'] as Map?)?['content'] as String?;
+        final hasInfobox = intro != null && WikitextParser.hasCastingInfobox(intro);
+        final info = hasInfobox ? WikitextParser.parseCasting(title, intro) : null;
+        final looksLikeList =
+            RegExp(r'^(19|20)\d{2} ').hasMatch(title) || title.startsWith('List of');
+        merged.add(
+          WikiSearchResult(
+            title: title,
+            thumbnailUrl: thumb?['source'] as String?,
+            isCasting: intro == null ? !looksLikeList : hasInfobox,
+            yearsText: icelandicYears(info?.yearsText),
+          ),
+        );
       }
     }
 
-    // Síður um heilar seríur og lista ("2024 HW Dream Garage", "List of ...")
-    // eru sjaldnast það sem leitað er að, svo þær fara aftast.
-    bool looksLikeList(String t) =>
-        RegExp(r'^(19|20)\d{2} ').hasMatch(t) || t.startsWith('List of');
-    final cars = merged.where((r) => !looksLikeList(r.title));
-    final lists = merged.where((r) => looksLikeList(r.title));
-    return [...cars, ...lists];
+    // Síður um heilar seríur, lista og framleiðendur eru sjaldnast það sem
+    // leitað er að, svo þær fara aftast.
+    return [...merged.where((r) => r.isCasting), ...merged.where((r) => !r.isCasting)];
   }
 
   /// Sækir allar upplýsingar um einn bíl ásamt öllum útgáfum hans og myndum.
