@@ -1,3 +1,5 @@
+import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hot_wheels_safn/app.dart';
 import 'package:hot_wheels_safn/data/collection_store.dart';
@@ -177,7 +179,8 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('1 af 3'), findsOneWidget);
 
-    await tester.tap(find.byTooltip('Næsti bíll'));
+    // Arrow keys flip on keyboards (web/tablet).
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
     await tester.pumpAndSettle();
     expect(find.text('2 af 3'), findsOneWidget);
     expect(find.text('Deora II'), findsOneWidget);
@@ -187,10 +190,31 @@ void main() {
     expect(find.text('3 af 3'), findsOneWidget);
     expect(find.text('Twin Mill'), findsOneWidget);
 
+    // Tapping the stage hides everything but the car, tapping again brings it back.
+    double captionOpacity() => tester
+        .widget<AnimatedOpacity>(
+          find.ancestor(of: find.text('Twin Mill'), matching: find.byType(AnimatedOpacity)).first,
+        )
+        .opacity;
+    expect(captionOpacity(), 1);
+    await tester.tapAt(const Offset(200, 300));
+    await tester.pump(const Duration(milliseconds: 400)); // past the double-tap window
+    await tester.pumpAndSettle();
+    expect(captionOpacity(), 0);
+    await tester.tapAt(const Offset(200, 300));
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpAndSettle();
+    expect(captionOpacity(), 1);
+
+    // Details live in a sheet.
+    await tester.tap(find.text('Nánar'));
+    await tester.pumpAndSettle();
     await tester.tap(find.byTooltip('Fjölga eintökum'));
     await tester.pumpAndSettle();
     expect(store.byId('a')!.quantity, 2);
     expect(find.text('2 eintök'), findsOneWidget);
+    await tester.tapAt(const Offset(200, 40)); // close the sheet
+    await tester.pumpAndSettle();
 
     Navigator.of(tester.element(find.byType(PageView))).pop();
     await tester.pumpAndSettle();
@@ -198,6 +222,79 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Deora II'), findsOneWidget);
     expect(find.text('Twin Mill'), findsNothing);
+  });
+
+  for (final kind in [PointerDeviceKind.touch, PointerDeviceKind.mouse]) {
+    testWidgets('a slow ${kind.name} drag flips to the next car', (tester) async {
+      await pumpApp(
+        tester,
+        cars: [
+          Car(id: 'a', name: 'Twin Mill', addedAt: DateTime(2026, 1, 1)),
+          Car(id: 'b', name: 'Deora II', addedAt: DateTime(2026, 1, 2)),
+        ],
+      );
+      await tester.tap(find.text('Deora II'));
+      await tester.pumpAndSettle();
+
+      final drag = await tester.startGesture(const Offset(380, 400), kind: kind);
+      for (var i = 0; i < 25; i++) {
+        await drag.moveBy(const Offset(-12, 0));
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+      await tester.pump(const Duration(milliseconds: 200)); // let go slowly, no fling
+      await drag.up();
+      await tester.pumpAndSettle();
+      expect(find.text('2 af 2'), findsOneWidget);
+    });
+  }
+
+  testWidgets('double tap opens the photo zoom view, one tap closes it', (tester) async {
+    await pumpApp(
+      tester,
+      cars: [
+        Car(
+          id: 'a',
+          name: 'Twin Mill',
+          imageUrl: 'https://img.test/a.png',
+          addedAt: DateTime(2026),
+        ),
+      ],
+    );
+    await tester.tap(find.text('Twin Mill'));
+    await tester.pumpAndSettle();
+
+    await tester.tapAt(const Offset(216, 300));
+    await tester.pump(const Duration(milliseconds: 50));
+    await tester.tapAt(const Offset(216, 300));
+    await tester.pumpAndSettle();
+    expect(find.byTooltip('Loka'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Loka'));
+    await tester.pumpAndSettle();
+    expect(find.byTooltip('Loka'), findsNothing);
+    expect(find.text('Twin Mill'), findsOneWidget);
+  });
+
+  testWidgets('slideshow plays through the cars and stops at the end', (tester) async {
+    await pumpApp(
+      tester,
+      cars: [
+        Car(id: 'a', name: 'Twin Mill', addedAt: DateTime(2026, 1, 1)),
+        Car(id: 'b', name: 'Deora II', addedAt: DateTime(2026, 1, 2)),
+      ],
+    );
+    await tester.tap(find.text('Deora II'));
+    await tester.pumpAndSettle();
+    expect(find.text('1 af 2'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Spila sýningu'));
+    await tester.pump(const Duration(seconds: 5));
+    await tester.pumpAndSettle();
+    expect(find.text('2 af 2'), findsOneWidget);
+
+    await tester.pump(const Duration(seconds: 5));
+    await tester.pumpAndSettle();
+    expect(find.byTooltip('Spila sýningu'), findsOneWidget); // stopped, controls back
   });
 
   testWidgets('delete a car and undo', (tester) async {

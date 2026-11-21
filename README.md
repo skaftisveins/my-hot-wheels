@@ -23,8 +23,15 @@ gegnum safnið og skoða bílana.
 - Tölur efst: fjöldi bíla, fjöldi gerða, uppáhalds og elsti bíllinn.
 - Leit í safninu (nafn, ár, litur, sería …), síur (uppáhalds, í pakkningu,
   lausir) og röðun (nýjast skráð, nafn, árgerð).
-- Smellt á bíl opnar hann í stóru formi. Þaðan er hægt að **fletta** á milli
-  bíla með því að strjúka til hliðar eða með örvunum neðst.
+- Smellt á bíl opnar hann í **sýningarham**: myndin flýgur úr bílskúrnum á
+  upplýst svið sem fær lit sinn úr lakki bílsins, með spegilmynd á glergólfi.
+  - Strjúka til hliðar til að fletta (líka með mús eða örvatökkum). Kortið
+    hallar í þrívídd og liturinn á sviðinu breytist með fingrinum.
+  - Ýta á myndina til að fela allt nema bílinn, ýta aftur til að fá allt til baka.
+  - Tvísmella til að opna myndina eina: klípa til að súma og draga til að skoða.
+  - ▶ spilar myndasýningu í gegnum safnið með hægum aðdrætti á hverja mynd.
+  - Strjúka upp eða ýta á „Nánar“ til að sjá allar upplýsingar.
+  - Myndir eru sóttar í hárri upplausn í sýningarham.
 - Breyta, eyða (með „Afturkalla“), fjölga/fækka eintökum, setja í uppáhalds og
   opna síðu bílsins á Hot Wheels Wiki.
 

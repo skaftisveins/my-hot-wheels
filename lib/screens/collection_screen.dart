@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../app.dart';
 import '../data/collection_store.dart';
 import '../widgets/car_card.dart';
+import '../widgets/showroom_photo.dart';
 import 'add_car_search_screen.dart';
 import 'car_detail_screen.dart';
 
@@ -131,14 +132,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   itemCount: cars.length,
                   itemBuilder: (context, index) => CarCard(
                     car: cars[index],
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => CarDetailScreen(
-                          carIds: [for (final c in cars) c.id],
-                          initialIndex: index,
-                        ),
-                      ),
-                    ),
+                    onTap: () {
+                      final url = cars[index].imageUrl;
+                      // Hlutföll myndarinnar tilbúin áður en hún flýgur inn á sviðið.
+                      if (url != null) imageAspect(url);
+                      Navigator.of(context).push(
+                        showroomRoute(carIds: [for (final c in cars) c.id], initialIndex: index),
+                      );
+                    },
                   ),
                 ),
               ),
